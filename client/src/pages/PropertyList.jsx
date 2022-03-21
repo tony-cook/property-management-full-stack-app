@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import BreadCrumbs from '../components/BreadCrumbs';
 import Search from '../components/Search';
 import Refine from '../components/Refine';
+import List from '../components/List/List';
 
 export default function PropertyList() {
   return (
@@ -18,6 +19,9 @@ export default function PropertyList() {
       </Box>
       <Box sx={{ my: 1 }}>
         <Search />
+      </Box>
+      <Box sx={{ my: 1 }}>
+        <List />
       </Box>
     </Box>
   );

@@ -1,0 +1,67 @@
+[
+{
+    "location": "5c/14 Upper Queen Street, City Centre (Auckland City), 1010",
+    "coordinates":
+    {
+       "lat":-36.858320,
+        "lng":174.761000
+    }
+},{
+    "location": "TO BE FIXED",
+    "coordinates":
+    {
+       "lat":-36.848461,
+        "lng":174.763336
+    }
+},{
+    "location": "1106/207 Federal street, City Centre (Auckland City), 1010",
+    "coordinates":
+    {
+       "lat":-36.85092,
+        "lng":174.76088
+    }
+},{
+    "location": "10/15, Queen Mary Avenue, New Lynn, Waitakere",
+    "coordinates":
+    {
+        "lat":-36.9019955,
+        "lng":174.67670
+    }
+},{
+    "location": "3/17 Kelston Street, New Lynn, 600",
+    "coordinates":
+    {
+       "lat":-36.9001,
+        "lng":174.674665
+    }
+
+},{
+    "location": "11C/148 Quay Street, City Centre (Auckland City), 1010",
+    "coordinates":
+    {
+       "lat":-36.843556,
+        "lng":174.768210
+    }
+},{
+    "location": "2/542 Parnell Road, Newmarket, 1023",
+    "coordinates":
+    {
+        "lat":-36.86380,
+        "lng":174.7802935
+    }
+},{
+    "location": "C716/176 Broadway, Newmarket, 1023",
+    "coordinates":
+    {
+       "lat":-36.868118,
+        "lng":174.77845
+    }
+},{
+    "location": "2 Mellons Bay Road, Howick, 2014",
+    "coordinates":
+    {
+       "lat":-36.89188,
+        "lng":174.9261028
+    }
+}
+]
