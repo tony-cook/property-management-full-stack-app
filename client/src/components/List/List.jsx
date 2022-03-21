@@ -1,5 +1,3 @@
-import Button from '@mui/material/Button';
-
 import SortSelect from '../SortSelect/SortSelect';
 import ListViewButton from '../ListViewButton/ListViewButton';
 import GoogleMaps from '../GoogleMap/GoogleMaps';
