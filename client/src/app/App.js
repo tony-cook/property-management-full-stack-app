@@ -1,18 +1,25 @@
 import Button from '@mui/material/Button';
 
+import SortSelect from '../components/SortSelect/SortSelect'
+import ListViewButton from '../components/ListViewButton/ListViewButton'
+import GoogleMaps from '../components/GoogleMap/GoogleMaps'
+import './App.css';
+
 function App() {
   return (
     <div>
-      <Button variant="contained" color="green">
-        Theme Color Name
-      </Button>
-      <ul>
-        <li>red</li>
-        <li>green</li>
-        <li>blue</li>
-        <li>darkgrey</li>
-        <li>lightgrey</li>
-      </ul>
+      <div className="lower-content-container">
+        <div className="button-row">
+          <ListViewButton />
+          <SortSelect />
+        </div>
+        <div className="google-map">
+          <GoogleMaps />
+        </div>
+      </div>
+
+      
+      
     </div>
   );
 }
