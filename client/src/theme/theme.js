@@ -34,6 +34,7 @@ const theme = createTheme({
       contrastText: 'rgba(0,0,0,0.88)'
     },
     background: {
+      main: '#ffffff',
       paper: '#F6F5F4'
     }
   },
@@ -63,6 +64,10 @@ const theme = createTheme({
     },
     body1: {
       fontSize: '1rem',
+      fontWeight: 400
+    },
+    body2: {
+      fontSize: '0.8rem',
       fontWeight: 500
     }
   }
