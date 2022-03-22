@@ -20,7 +20,9 @@ export default function PropertyList() {
       <Box sx={{ my: 2 }}>
         <Search />
       </Box>
-      <Box sx={{ my: 2 }}>{/* <List /> */}</Box>
+      <Box sx={{ my: 2 }}>
+        <List />
+      </Box>
     </Box>
   );
 }
