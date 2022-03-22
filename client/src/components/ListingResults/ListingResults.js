@@ -22,7 +22,7 @@ function ListingResults() {
           {propertyDataWeek2.map((property, index) => (
             <div key={index} className="single-listing-container">
               <div className="listing-image-container">
-                <img src={property.images[0]} alt=""></img>
+                <img className="listing-image" src={property.images[0]} alt="" />
               </div>
               <img src={bathroomIcon} alt="" />
               {/* <div className="project-title">{project.name}</div> */}
