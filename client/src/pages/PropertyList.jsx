@@ -11,7 +11,7 @@ import GoogleMaps from '../components/GoogleMap/GoogleMaps';
 
 export default function PropertyList() {
   return (
-    <Box sx={{ py: 2, px: { xs: 2, md: 8 } }}>
+    <Box sx={{ py: 2, px: { xs: 4, lg: '5vw' } }}>
       <BreadCrumbs />
       <Box sx={{ mt: 1, mb: 3 }}>
         <Typography sx={{ typography: { sm: 'h5', md: 'h5' } }}>Auckland Property Listings</Typography>
@@ -22,19 +22,17 @@ export default function PropertyList() {
       <Box sx={{ mb: 2 }}>
         <Search />
       </Box>
-      <Box sx={{ mb: 1 }}>
-        <div className="lower-content-container">
-          <div className="left-lower-content-container">
-            <div className="button-row">
-              <ListViewButton />
-              <SortSelect />
-            </div>
-            <ListingResults />
-          </div>
-          <div className="google-map">
-            <GoogleMaps />
-          </div>
-        </div>
+      <Box sx={{ mb: 1, display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 2 }}>
+        <Box sx={{ width: '50%' }}>
+          <Box display="flex">
+            <ListViewButton />
+            <SortSelect sx={{ flexGrow: 1 }} />
+          </Box>
+          <ListingResults />
+        </Box>
+        <Box bgcolor="red.main" sx={{ flexGrow: 1 }}>
+          <GoogleMaps />
+        </Box>
       </Box>
     </Box>
   );

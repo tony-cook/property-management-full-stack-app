@@ -4,4 +4,5 @@
 }
 body {
   background-color: #f6f5f4;
+  box-sizing: border-box;
 }

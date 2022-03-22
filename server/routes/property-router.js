@@ -1,9 +1,9 @@
-const express = require('express')
+const express = require('express');
 
-const PropertyCtrl = require('../controllers/property-ctrl')
+const PropertyCtrl = require('../controllers/property-ctrl');
 
-const router = express.Router()
+const router = express.Router();
 
-router.get('/propertys/all', PropertyCtrl.getPropertys)
+router.get('/properties/all', PropertyCtrl.getProperties);
 
-module.exports = router
+module.exports = router;

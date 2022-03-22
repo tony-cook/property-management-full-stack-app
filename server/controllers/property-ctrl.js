@@ -1,16 +1,15 @@
-const Property = require('../models/property-model')
-
+const Property = require('../models/property-model');
 
 // quickSortPropertysBySuburb = async (req, res) => {
 //     const properties = await Property.find({})
 
 //     function quickSortSuburb (array) {
-//         if (array.length < 2) 
+//         if (array.length < 2)
 //           return array;
-        
+
 //         let pivotValue = array[0]
 //         let pivot = array[0]['suburb'];
-//         let left  = []; 
+//         let left  = [];
 //         let right = [];
 
 //         for (let i = 1; i < array.length; i++){
@@ -32,12 +31,12 @@ const Property = require('../models/property-model')
 //     const properties = await Property.find({})
 
 //     function quickSortPrice (array) {
-//         if (array.length < 2) 
+//         if (array.length < 2)
 //           return array;
-        
+
 //         let pivotValue = array[0]
 //         let pivot = array[0]['price'];
-//         let left  = []; 
+//         let left  = [];
 //         let right = [];
 
 //         for (let i = 1; i < array.length; i++){
@@ -55,25 +54,23 @@ const Property = require('../models/property-model')
 
 // }
 
-getPropertys = async (req, res) => {
-    await Property.find({}, (err, property) => {
-        if (err) {
-            return res.status(400).json({ success: false, error: err })
-        }
-        if (!Property.length) {
-            return res
-                .status(404)
-                .json({ success: false, error: `Property not found` })
-        }
+getProperties = async (req, res) => {
+  await Property.find({}, (err, property) => {
+    if (err) {
+      return res.status(400).json({ success: false, error: err });
+    }
+    if (!Property.length) {
+      return res.status(404).json({ success: false, error: `Property not found` });
+    }
 
-        return res.status(200).json({ success: true, data: property })
-    }).clone().catch(err => console.log(err))
-}
-
-
+    return res.status(200).json({ success: true, data: property });
+  })
+    .clone()
+    .catch(err => console.log(err));
+};
 
 module.exports = {
-    getPropertys,
-    // quickSortPropertysByPrice,
-    // quickSortPropertysBySuburb
-}
+  getProperties
+  // quickSortPropertysByPrice,
+  // quickSortPropertysBySuburb
+};

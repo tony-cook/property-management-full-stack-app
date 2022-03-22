@@ -6,8 +6,8 @@ import mapStyles from './components/mapStyles';
 import pinIcon from '../../assets/images/pin_icon.png';
 
 const mapContainerStyle = {
-  height: '70vh',
-  width: '50vw'
+  height: '100%',
+  width: '100%'
 };
 
 const center = {
@@ -33,27 +33,20 @@ function GoogleMaps() {
   console.log(propertyData);
 
   return (
-    <div>
-
-        <GoogleMap 
-            mapContainerStyle={mapContainerStyle}
-            zoom={12}
-            center={center}
-            options={options}
-            >
-                {propertyData.map((property,index) => (
-                    <Marker key={index} 
-                    position= {property.coordinates}
-                    icon={{
-                        url: pinIcon,
-                        scaledSize: new window.google.maps.Size(20, 30),
-                        origin: new window.google.maps.Point(0, 0),
-                        anchor: new window.google.maps.Point(15, 15),
-                    }}
-                    />
-                ))}
-        </GoogleMap>
-    </div>
+    <GoogleMap mapContainerStyle={mapContainerStyle} zoom={12} center={center} options={options}>
+      {propertyData.map((property, index) => (
+        <Marker
+          key={index}
+          position={property.coordinates}
+          icon={{
+            url: pinIcon,
+            scaledSize: new window.google.maps.Size(20, 30),
+            origin: new window.google.maps.Point(0, 0),
+            anchor: new window.google.maps.Point(15, 15)
+          }}
+        />
+      ))}
+    </GoogleMap>
   );
 }
 

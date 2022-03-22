@@ -9,7 +9,7 @@ import Shownearby from './RefineItems/Shownearby';
 
 export default function Refine() {
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' } }}>
       <Suburb />
       <Rent />
       <Bedrooms />

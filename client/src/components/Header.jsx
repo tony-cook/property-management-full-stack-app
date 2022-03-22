@@ -23,7 +23,7 @@ export default function Header() {
   return (
     <Box
       sx={{
-        height: 60,
+        height: 40,
         bgcolor: 'background.main',
         display: 'flex',
         justifyContent: 'space-between',
@@ -31,13 +31,13 @@ export default function Header() {
         overflow: 'hidden',
         color: 'black',
         py: 2,
-        px: { xs: 2, md: 8 }
+        px: { xs: 4, lg: '5vw' }
       }}
     >
       <Box
         sx={{
-          width: { xs: 120, md: 160 },
-          maxWidth: 160
+          width: { xs: 100, md: 120 },
+          maxWidth: 120
         }}
         component="img"
         alt="The auckland property company logo"
@@ -71,10 +71,10 @@ export default function Header() {
             </Box>
           );
         })}
-        <Button variant="contained" color="red" sx={{ textTransform: 'none' }}>
-          Contact Us
-        </Button>
       </Box>
+      <Button variant="contained" color="red" size="small" sx={{ textTransform: 'none', display: { xs: 'none', md: 'flex' } }}>
+        Contact Us
+      </Button>
 
       <Box
         sx={{

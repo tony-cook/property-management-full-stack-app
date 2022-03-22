@@ -16,7 +16,7 @@ export default function Search() {
         gap: 1
       }}
     >
-      <Autocomplete sx={{ backgroundColor: 'background.main', flexGrow: 1, '& .MuiButtonBase-root': { backgroundColor: 'red.main', color: 'white', mr: 0.5 }, '& .MuiSvgIcon-root': { color: 'background.main' }, '& .MuiChip-deleteIcon': { color: 'Background.main' } }} multiple id="tags-outlined" options={tags} getOptionLabel={option => option} defaultValue={[]} filterSelectedOptions renderInput={params => <TextField {...params} label="Search By Tags" placeholder="Add tags: e.g. 'Available Now'" />} />
+      <Autocomplete sx={{ backgroundColor: 'background.main', flexGrow: 1, '& .MuiButtonBase-root': { backgroundColor: 'red.main', color: 'white', mr: 0.5 }, '& .MuiSvgIcon-root': { color: 'background.main' }, '& .MuiChip-deleteIcon': { color: 'background.main' } }} multiple id="tags-outlined" options={tags} getOptionLabel={option => option} defaultValue={[]} filterSelectedOptions renderInput={params => <TextField {...params} label="Search By Tags" placeholder="Add tags: e.g. 'Available Now'" />} />
       <Button variant="contained" color="red" sx={{ textTransform: 'none' }}>
         Search Properties
       </Button>
