@@ -1,0 +1,288 @@
+[{
+  "_id": {
+    "$oid": "623523a57d79d5e7d703af08"
+  },
+  "location": "5c/14 Upper Queen Street, City Centre (Auckland City), 1010",
+  "suburb": "City Centre (Auckland City)",
+  "price": 350,
+  "bedroom": 1,
+  "bathroom": 1,
+  "available": "now",
+  "type": "Apartment",
+  "description": "APPLY ONLINE Tidy and modern STUDIO apartment with one car park. Small balcony off the living area overlooking the path. UN-FURNISHED but does include white ware – small fridge, oven, hob, dish drawer and washing machine Bathroom has spacious shower, vanity and toilet Situated in a modern, tidy complex with on site building manager and swipe tag access. Located within an easy walk to K Rd and the city centre, public transport and shops and cafes. Move in costs four weeks bond and the first weeks rent Please submit an inquiry through the website/advert to receive automatic viewing alerts. You must register online to view.",
+  "tags": [
+    "Pets OK",
+    "Available now",
+    "With Carpark"
+  ],
+  "images": [
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI027275_APM27275_4.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI027276_APM27276_5.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI027278_APM27278_7.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI027279_APM27279_8.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI027271_APM27271_0.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI027273_APM27273_2.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI027272_APM27272_1.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI027275_APM27275_3.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI027277_APM27277_6.jpg"
+  ],
+  "agent": {
+    "name": "Carmen Michie",
+    "photo": "https://www.aucklandproperty.net/wp-content/uploads/2018/06/Carmen-Michie.png",
+    "email": "carmen@aucklandproperty.net"
+  }
+},{
+  "_id": {
+    "$oid": "623523a57d79d5e7d703af09"
+  },
+  "location": "Auckland City, City Centre (Auckland City), 1010",
+  "suburb": "City Centre (Auckland City)",
+  "price": 345,
+  "bedroom": 1,
+  "bathroom": 1,
+  "available": "now",
+  "type": "Apartment",
+  "description": "This is a furnished studio apartment located on Queen Street in the heart of Auckland City. The apartment has an open plan layout with a small balcony off the bedroom. There is a sliding door that can separate the bedroom from the living space and kitchen. The kitchenette features a small oven, hobs, microwave, draw dishwasher and fridge freezer along with a washing machine. The furniture in the apartment includes a queen bed, wooden draws, a wooden storage unit along with a dining table and chairs. Fantastic central location with walking distance to public transport, parks, inner city activities and amenities including the Universities, Sky City, Britomart and K Rd. Note there is no carpark included with this apartment.",
+  "tags": [
+    "Pets OK",
+    "Available now",
+    "Furnished"
+  ],
+  "images": [
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI053203_APM53203_1.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI053205_APM53205_2.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI053204_APM53204_0.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI053201_APM53201_3.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI053202_APM53202_4.jpg"
+  ],
+  "agent": {
+    "name": "Trelise Graham",
+    "photo": "https://www.aucklandproperty.net/wp-content/uploads/2020/07/Trelise-3-300.jpg",
+    "email": "Trelise.Graham@aucklandproperty.net"
+  }
+},{
+  "_id": {
+    "$oid": "623523a57d79d5e7d703af0a"
+  },
+  "location": "1106/207 Federal street, City Centre (Auckland City), 1010",
+  "suburb": "City Centre (Auckland City)",
+  "price": 480,
+  "bedroom": 2,
+  "bathroom": 1,
+  "available": "now",
+  "type": "Apartment",
+  "description": "Located in the Heart of the City, Federal Street is the gateway to SKYCITY. It has also transformed into an inner-city hot spot for food lovers with some of the best eateries in Auckland. Located within a few minutes walking distance from the universities, public transport facilities, Queen St shopping and famous Auckland City Waterfront and Viaduct Basin.",
+  "tags": [
+    "Amazing view",
+    "Near Station",
+    "Newly Refurnished",
+    "Safe Neighbourhood",
+    "Students"
+  ],
+  "images": [
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI055245_APM55245_0.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI055244_APM55244_1.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI055243_APM55243_2.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI055240_APM55240_3.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI055246_APM55246_4.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI055237_APM55237_5.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI055236_APM55236_6.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI055242_APM55242_8.jpg"
+  ],
+  "agent": {
+    "name": "Ashlee Zhang",
+    "photo": "https://www.aucklandproperty.net/wp-content/uploads/2018/06/Ashlee-square-2-150x150.jpg",
+    "email": "ashlee.zhang@aucklandproperty.net"
+  }
+},{
+  "_id": {
+    "$oid": "623523a57d79d5e7d703af0b"
+  },
+  "location": "10/15, Queen Mary Avenue, New Lynn, Waitakere",
+  "suburb": "New Lynn",
+  "price": 500,
+  "bedroom": 2,
+  "bathroom": 1,
+  "available": "Sun, 20th March 2022",
+  "type": "Apartment",
+  "description": "Fully modernized 2 bedroom home available on 2nd level of 2 storey multi-unit block. Walk into a sunny open plan kitchen living area which leads to small deck area. Two bedrooms, and one is slightly smaller suitable for office or child room. Ideally suits a professional couple, or small family.",
+  "tags": [
+    "Roomate Needed",
+    "Students",
+    "Near Station",
+    "New Build"
+  ],
+  "images": [
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI054654_APM54654_0.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI054651_APM54651_1.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI054648_APM54648_2.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI054646_APM54646_3.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI054655_APM54655_4.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI054650_APM54650_5.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI054652_APM54652_6.jpg"
+  ],
+  "agent": {
+    "name": "Lea Mclennan",
+    "photo": "https://www.aucklandproperty.net/wp-content/uploads/2020/07/Lea-APM16-2.jpg",
+    "email": "lea@aucklandproperty.net"
+  }
+},{
+  "_id": {
+    "$oid": "623523a57d79d5e7d703af0c"
+  },
+  "location": "3/17 Kelston Street, New Lynn, 600",
+  "suburb": "New Lynn",
+  "price": 360,
+  "bedroom": 1,
+  "bathroom": 1,
+  "available": "now",
+  "type": "Apartment",
+  "description": "BOOK A VIEWING ONLINE NOW! See below ad for instructions This property is tucked away in a quiet cul-de-sac and up a private driveway. The flat occupies half the lower floor . Offering – close proximity to public transport, parks, and the New Lynn shopping Mall. – what a great location. The flat offers a shared garden that flows down to the estuary inlet. The spacious dining / lounge area opens through French doors to the garden area and the bedroom is also of a generous size , and receives afternoon sun. There is a lock up shed for your bikes and sports gear. The successful tenants need not worry about the water costs as this is included in the rent and a cat would be welcome. You must register to receive notifications of scheduled open viewings. Click “email the agent ” at the top of the page or Scroll to the bottom of the page and click “view their website link” and follow prompts to register. – PLEASE DO NOT PH/TXT",
+  "tags": [
+    "Pets OK",
+    "Available now",
+    "With Carpark"
+  ],
+  "images": [
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI054818_APM54818_0.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI054819_APM54819_1.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI054820_APM54820_2.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI054821_APM54821_3.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI054822_APM54822_4.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI054823_APM54823_5.jpg"
+  ],
+  "agent": {
+    "name": "Peter McDell",
+    "photo": "https://www.aucklandproperty.net/wp-content/uploads/2018/06/Peter-McDell-150x150.png",
+    "email": "peter.mcdell@aucklandproperty.net"
+  }
+},{
+  "_id": {
+    "$oid": "623523a57d79d5e7d703af0d"
+  },
+  "location": "11C/148 Quay Street, City Centre (Auckland City), 1010",
+  "suburb": "City Centre (Auckland City)",
+  "price": 1380,
+  "bedroom": 3,
+  "bathroom": 3,
+  "available": "now",
+  "type": "Apartment",
+  "description": "Scroll to the very bottom of the page, click the view office website link, and follow prompts to register so we can keep you up-to-date on the status of the inspection and property. Inspections may be cancelled if there are no attendees registered or confirmed. You will be amazed as soon as you walk through the front door by the extraordinarily high ceilings, ample amount of space, brightness, and dazzling views of the cityscape, Sky Tower, and harbour With generous living spaces of 160m2, this classy three-bedroom, three-bathroom city home offers a huge designer stone bench-top kitchen with quality appliances, plenty of storage, and a wine fridge, modern designer bathrooms, French Oak flooring, and air-conditioning for all-year-round comfort. ***This is a semi-furnished penthouse apartment. *** Downstairs: Open plan kitchen dining and living area with 2 bedrooms & 2 bathrooms. One includes a walk-in wardrobe and a beautiful en-suite bathroom. The second bedroom and main bathroom are also on this level. Slide open the wrap-around windows and you’ll be drawn to the views of the harbour out to the west and the amazing elevated outlook of the cityscape – incredible by day and stunning at night. Upstairsï¼š The master bedroom with pitched ceilings, a heat pump, a walk-in wardrobe, and an en-suite bathroom. All bathrooms offer plenty of storage and have under-floor heating. This ideal city home also comes with a secure car park. The location could not be better, situated in the heart of Britomart Precinct and across the road from our wonderful waterfront. Moving cost is 4 weeks bond, 1st-week rent ",
+  "tags": [
+    "Newly Refurnished",
+    "Available now",
+    "With Carpark",
+    "Amazing View",
+    "Safe Neighbourhood"
+  ],
+  "images": [
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI050733_APM50733_0.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI050733_APM50733_1.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI050733_APM50733_2.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI050733_APM50733_3.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI050733_APM50733_4.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI050733_APM50733_5.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI050733_APM50733_6.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI050733_APM50733_7.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI050733_APM50733_8.jpg"
+  ],
+  "agent": {
+    "name": "Ashlee Zhang",
+    "photo": "https://www.aucklandproperty.net/wp-content/uploads/2018/06/Ashlee-square-2-150x150.jpg",
+    "email": "ashlee.zhang@aucklandproperty.net"
+  }
+},{
+  "_id": {
+    "$oid": "623523a57d79d5e7d703af0e"
+  },
+  "location": "2/542 Parnell Road, Newmarket, 1023",
+  "suburb": "Newmarket",
+  "price": 660,
+  "bedroom": 2,
+  "bathroom": 1,
+  "available": "Sat, 19 Mar 2022",
+  "type": "Apartment",
+  "description": "What a Great location! Open plan Morden design kitchen/ bathroom/living room you will love it. Just few minutes away walk to the -Newmarket, Parnell. -Gym, swimming pool. -Shops and restaurants. -Grammar Zone. -Auckland Domain. Furnishing including: --Washing machine and Dryer --Microwave and some cooking supplies -1 weeks Rent 4 weeks Bond Suitable for up to 3 tenants. No pets or smokers.",
+  "tags": [
+    "Furnished",
+    "Safe Neighbourhood"
+  ],
+  "images": [
+    "https://trademe.tmcdn.co.nz/photoserver/plus/1708122597.jpg",
+    "https://trademe.tmcdn.co.nz/photoserver/plus/1708122608.jpg",
+    "https://trademe.tmcdn.co.nz/photoserver/plus/1708122621.jpg",
+    "https://trademe.tmcdn.co.nz/photoserver/plus/1708122633.jpg",
+    "https://trademe.tmcdn.co.nz/photoserver/plus/1708122638.jpg",
+    "https://trademe.tmcdn.co.nz/photoserver/plus/1708122656.jpg"
+  ],
+  "agent": {
+    "name": "Peter McDell",
+    "photo": "https://www.aucklandproperty.net/wp-content/uploads/2018/06/Peter-McDell-150x150.png",
+    "email": "peter.mcdell@aucklandproperty.net"
+  }
+},{
+  "_id": {
+    "$oid": "623523a57d79d5e7d703af0f"
+  },
+  "location": "C716/176 Broadway, Newmarket, 1023",
+  "suburb": "Newmarket",
+  "price": 530,
+  "bedroom": 2,
+  "bathroom": 2,
+  "available": "now",
+  "type": "Apartment",
+  "description": "You MUST REGISTER for book a viewing. Scroll to the bottom of the page, click â€œview office websiteâ€ link and follow prompts to register – Please Note: You MUST REGISTER for an Inspection so we can keep you up-to-date on the status of the inspection and property. Inspections may be cancelled if there are no attendees registered or confirmed. This sunny two bedroom apartment offers open plan living with two double bedrooms, two bathrooms (one ensuite), a secure carpark and whiteware which includes fridge/freezer, dish drawer, dryer and washing machine. Situated right on the top floor at the end of the sunny courtyard – so no through traffic past your apartment. Enjoy the fabulous Newmarket lifestyle with shops, restaurants, cafes, cinemas and transport at your door. Double grammar zone and also zoned for Auckland Normal Intermediate and New Market School. Moving cost is 4 weeks bond, 1st week rent. ",
+  "tags": [
+    "Furnished",
+    "Available now",
+    "With Carpark",
+    "Safe Neighbourhood"
+  ],
+  "images": [
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI003869_APM3869_6.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI054954_APM54954_0.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI054953_APM54953_1.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI054949_APM54949_2.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI054956_APM54956_4.jpg"
+  ],
+  "agent": {
+    "name": "Ashlee Zhang",
+    "photo": "https://www.aucklandproperty.net/wp-content/uploads/2018/06/Ashlee-square-2-150x150.jpg",
+    "email": "ashlee.zhang@aucklandproperty.net"
+  }
+},{
+  "_id": {
+    "$oid": "623523a57d79d5e7d703af10"
+  },
+  "location": "2 Mellons Bay Road, Howick, 2014",
+  "suburb": "Howick",
+  "price": 1180,
+  "bedroom": 4,
+  "bathroom": 2,
+  "available": "now",
+  "type": "House",
+  "description": "4 bedroom+study family home with swimming pool in zoned for MACLEANS COLLEGE This sunny 4 bedroom + study family home with a swimming pool in zoned for MACLEANS COLLEGE is available to move in now! Situated in an elevated position, the house is bright and warm with nice sea view over looking from the balcony bathed in sunshine. The spacious open plan living/dinning areas connect to the kitchen flow out to the balcony for outdoor entertainment. Entrance level features: – Two separate living areas. There’s a heat pump installed in the main living area (Fire place not to be used). – 3 good size bedrooms (one bedroom with sea view) – A spacious bathroom with a spa Top level features: – A (ensuite) master bedroom has two large windows with sea view filled in with all day light. – The master bedroom has its own storage and walk in wardrobe. – Thereâ€™s an additional study room attached to the master bedroom and could be used as the 5th bedroom Basement features: – A large storage room – A laundry area comes with washing machine and dryer It has large front and backyard with lawns included in the rent. There are 4 off street parking spaces at the backyard. In zoned for HOWICK INTERMEDIATE, MELLONS BAY SCHOOL, STAR OF THE SEA SCHOOL (HOWICK), MACLEANS COLLEGE and SANCTA MARIA COLLEGE. Located near Old Howick area in Auckland’s East, close to local shops, cafes, restaurants, parks and amenities. This property has great indoor/outdoor flow for comfortable living is awaiting its next new family so get in touch with Rachel to book for a viewing now!",
+  "tags": [
+    "Furnished",
+    "Available now",
+    "With Carpark",
+    "Safe Neighbourhood",
+    "Amazing View"
+  ],
+  "images": [
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI054452_APM54452_0.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI054454_APM54454_1.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI054453_APM54453_2.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI054439_APM54439_3.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI054441_APM54441_4.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI054446_APM54446_6.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI054450_APM54450_8.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI054443_APM54443_9.jpg",
+    "https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI054444_APM54444_11.jpg"
+  ],
+  "agent": {
+    "name": "Rachel Mei",
+    "photo": "https://www.aucklandproperty.net/wp-content/uploads/2018/06/Rachel-Mei-for-Web-1.jpg",
+    "email": "rachel.mei@aucklandproperty.net"
+  }
+}]

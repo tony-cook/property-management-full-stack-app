@@ -14,6 +14,7 @@ function ListViewButton() {
     border: '1px solid',
     lineHeight: 1.5,
     backgroundColor: '#ffffff',
+    whiteSpace: 'nowrap',
     borderColor: '#bf163d',
     fontFamily: [
       '-apple-system',

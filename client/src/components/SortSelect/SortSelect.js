@@ -2,7 +2,6 @@ import React from 'react'
 import { styled } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import FormControl from '@mui/material/FormControl';
-import InputLabel from '@mui/material/InputLabel';
 import NativeSelect from '@mui/material/NativeSelect';
 
 function SortSelect() {
@@ -16,9 +15,9 @@ function SortSelect() {
           backgroundColor: '#ffffff',
           border: '1px solid #ced4da',
           fontSize: 16,
-          padding: '10px 26px 10px 12px',
+          padding: '7px 26px 7px 12px',
           width: '400px',
-          marginTop: '-10px',
+          marginTop: '-8px',
           transition: theme.transitions.create(['border-color', 'box-shadow']),
           // Use the system font instead of the default Roboto font.
           fontFamily: [
