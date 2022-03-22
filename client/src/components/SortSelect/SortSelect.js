@@ -15,7 +15,7 @@ function SortSelect() {
           backgroundColor: '#ffffff',
           border: '1px solid #ced4da',
           fontSize: 16,
-          padding: '7px 26px 7px 12px',
+          padding: '12px 26px 10px 17px',
           width: '400px',
           marginTop: '-8px',
           transition: theme.transitions.create(['border-color', 'box-shadow']),
@@ -35,15 +35,14 @@ function SortSelect() {
           '&:focus': {
             borderRadius: 4,
             borderColor: '#bf163d',
-            boxShadow: '0 0 0 0.2rem rgba(0,123,255,.25)',
           },
         },
       }));
 
-    const [sort, setSort] = React.useState('');
+    const [sortType, setSortType] = React.useState('');
 
     const handleChange = (event) => {
-        setSort(event.target.value);
+        setSortType(event.target.value);
       };
 
   return (
@@ -51,14 +50,14 @@ function SortSelect() {
         <FormControl sx={{ m: 1 }} variant="standard">
         <NativeSelect
           id="demo-customized-select-native"
-          value={sort}
+          value={sortType}
           onChange={handleChange}
           input={<BootstrapInput />}
         >
-          <option value={10}>Sort: Featured Listings</option>
-          <option value={20}>Lowest Price</option>
-          <option value={30}>Highest Price</option>
-          <option value={40}>Available Date</option>
+          <option value={"featured"}>Sort: Featured Listings</option>
+          <option value={"minPrice"}>Lowest Price</option>
+          <option value={"maxPrice"}>Highest Price</option>
+          <option value={"available"}>Available Date</option>
         </NativeSelect>
       </FormControl>
     </div>

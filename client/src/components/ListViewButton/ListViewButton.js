@@ -2,6 +2,8 @@ import React from 'react'
 import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 
+import ListViewIcon from '../../assets/images/list-view-icon.png'
+
 
 
 function ListViewButton() {
@@ -10,8 +12,8 @@ function ListViewButton() {
     textTransform: 'none',
     fontSize: 16,
     color: '#bf163d',
-    padding: '6px 12px',
-    border: '1px solid',
+    padding: '10px 17px',
+    border: '1px solid red',
     lineHeight: 1.5,
     backgroundColor: '#ffffff',
     whiteSpace: 'nowrap',
@@ -43,8 +45,8 @@ function ListViewButton() {
   return (
     <div>
       <ListViewButton variant="contained" disableRipple>
-        <img src="list-view-icon.png" alt="icon.png" />
-        List View
+        <img src={ListViewIcon} alt="icon.png" />
+         List View
       </ListViewButton>
     </div>
   )
