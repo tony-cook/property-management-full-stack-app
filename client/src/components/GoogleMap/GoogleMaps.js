@@ -34,7 +34,6 @@ function GoogleMaps() {
 
   return (
     <div>
-<<<<<<< HEAD
 
         <GoogleMap 
             mapContainerStyle={mapContainerStyle}
@@ -54,22 +53,6 @@ function GoogleMaps() {
                     />
                 ))}
         </GoogleMap>
-=======
-      <GoogleMap mapContainerStyle={mapContainerStyle} zoom={12} center={center} options={options}>
-        {propertyData.map((property, index) => (
-          <Marker
-            key={index}
-            position={property.coordinates}
-            icon={{
-              url: pinIcon,
-              scaledSize: new window.google.maps.Size(20, 20),
-              origin: new window.google.maps.Point(0, 0),
-              anchor: new window.google.maps.Point(15, 15)
-            }}
-          />
-        ))}
-      </GoogleMap>
->>>>>>> main
     </div>
   );
 }
