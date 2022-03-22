@@ -56,13 +56,12 @@ export default function Header() {
             <Box
               sx={{
                 border: 'none',
-                borderRadius: 1,
                 p: 1,
                 mb: -1,
                 bgcolor: 'white',
                 '&:hover': {
-                  bgcolor: 'red.main',
-                  color: 'white'
+                  borderBottom: 2,
+                  borderBottomColor: 'red.main'
                 }
               }}
               component="button"
@@ -72,7 +71,7 @@ export default function Header() {
             </Box>
           );
         })}
-        <Button variant="contained" color="red">
+        <Button variant="contained" color="red" sx={{ textTransform: 'none' }}>
           Contact Us
         </Button>
       </Box>
