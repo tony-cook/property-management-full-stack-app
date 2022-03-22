@@ -52,7 +52,7 @@ function GoogleMaps() {
                     position= {property.coordinates}
                     icon={{
                         url: pinIcon,
-                        scaledSize: new window.google.maps.Size(20, 20),
+                        scaledSize: new window.google.maps.Size(20, 30),
                         origin: new window.google.maps.Point(0, 0),
                         anchor: new window.google.maps.Point(15, 15),
                     }}

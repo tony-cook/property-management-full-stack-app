@@ -1,23 +1,78 @@
 :root {
-  font-weight: lighter;
   font-family: "Noto Sans", "Roboto", "Arial", "sans-serif";
 }
 h5 {
-  font-size: 1.2rem;
+  font-size: 20px;
   padding: 0;
   margin-left: 0;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+h2 {
+  font-size: 16px;
+  font-weight: 700;
+  padding: 0;
+  margin-left: 0;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+h3 {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 0;
+  color: #5c5c5c;
+  margin-left: 0.25rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  display: inline;
+}
+h6 {
+  font-size: 12px;
+  font-weight: 400;
+  padding: 0;
+  color: #5c5c5c;
+  display: inline;
+}
+.listing-results-container {
+  height: 55vh;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  margin-right: 20px;
+}
 .single-listing-container {
   width: 550px;
   height: 200px;
-  margin-bottom: 20px;
-  border: 1px solid red;
+  margin: 20px 20px 20px 0;
   border-radius: 5px;
+  display: flex;
   box-shadow: 0px 4px 19px -4px rgba(0, 0, 0, 0.15);
 }
 .listing-image {
   height: 200px;
   width: 200px;
+}
+.listing-info-container {
+  padding: 15px;
+  position: relative;
+}
+.bottom-info {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  width: 320px;
+}
+.more-detail-btn {
+  color: #bf163d;
+  font-weight: 500;
+  font-size: 16px;
+  position: absolute;
+  bottom: 0;
+  right: 15px;
+}
+.more-detail-btn:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
