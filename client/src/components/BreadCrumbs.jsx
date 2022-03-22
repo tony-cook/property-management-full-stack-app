@@ -12,7 +12,7 @@ function handleClick(event) {
 export default function BasicBreadcrumbs() {
   return (
     <div role="presentation" onClick={handleClick}>
-      <Breadcrumbs maxItems={2} separator={<NavigateNextIcon fontSize="small" />} aria-label="breadcrumb" fontSize="0.8rem" color="blue.light">
+      <Breadcrumbs maxItems={2} separator="/" aria-label="breadcrumb" fontSize="0.8rem" color="blue.light">
         <Link underline="hover" color="blue.light" href="/">
           Home
         </Link>

@@ -13,7 +13,7 @@ function ListViewButton() {
     fontSize: 16,
     color: '#bf163d',
     padding: '10px 17px',
-    border: '1px solid red',
+    border: '1px solid',
     lineHeight: 1.5,
     backgroundColor: '#ffffff',
     whiteSpace: 'nowrap',
