@@ -3,11 +3,11 @@ import {
     GoogleMap,
     useLoadScript,
     Marker,
-    InfoWindow,
   } from "@react-google-maps/api";
 
-import propertyData from './properties_coords'
+import propertyData from '../../data/properties_coords'
 import mapStyles from "./components/mapStyles"
+import pinIcon from "../../assets/images/pin_icon.png"
 
 const mapContainerStyle = {
     height: "70vh",
@@ -43,7 +43,7 @@ function GoogleMaps() {
 
         <GoogleMap 
             mapContainerStyle={mapContainerStyle}
-            zoom={10}
+            zoom={12}
             center={center}
             options={options}
             >
@@ -51,7 +51,7 @@ function GoogleMaps() {
                     <Marker key={index} 
                     position= {property.coordinates}
                     icon={{
-                        url: '/pin_icon.png',
+                        url: pinIcon,
                         scaledSize: new window.google.maps.Size(20, 20),
                         origin: new window.google.maps.Point(0, 0),
                         anchor: new window.google.maps.Point(15, 15),
