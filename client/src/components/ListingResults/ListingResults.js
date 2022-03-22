@@ -9,7 +9,6 @@ function ListingResults() {
   const [resultsCount, setResultsCount] = useState(0);
 
   useEffect(() => {
-    console.log(propertyDataWeek2);
     const resultsCount = propertyDataWeek2.length;
     setResultsCount(resultsCount);
   }, []);

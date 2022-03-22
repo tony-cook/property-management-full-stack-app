@@ -30,7 +30,6 @@ function GoogleMaps() {
   if (loadError) return 'Error';
   if (!isLoaded) return 'Loading...';
 
-  console.log(propertyData);
 
   return (
     <GoogleMap mapContainerStyle={mapContainerStyle} zoom={12} center={center} options={options}>
