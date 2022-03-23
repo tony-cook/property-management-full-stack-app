@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-
 import BreadCrumbs from '../components/BreadCrumbs';
 import Search from '../components/Search';
 import Refine from '../components/Refine';
@@ -13,17 +11,16 @@ import ListViewButton from '../components/ListViewButton/ListViewButton';
 import GoogleMaps from '../components/GoogleMap/GoogleMaps';
 
 export default function PropertyList() {
+  const [isLoading, setIsLoading] = useState(true);
   const [allProperties, setAllProperties] = useState([]);
   const [searchResult, setSearchResult] = useState([]);
-  const [sortType, setSortType] = React.useState('featured');
   const [sortedList, setSortedList] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
   const [isListView, setIsListView] = useState(false);
-
-  const viewWidth = isListView ? { flexGrow: 1 } : { width: '50%' };
-
+  const [sortType, setSortType] = useState('featured');
   const [searchTags, setSearchTags] = useState([]);
   const [suburb, setSuburb] = useState('');
+
+  const viewWidth = isListView ? { flexGrow: 1 } : { width: '50%' };
 
   function searchTagsInput(event, newValue) {
     setSearchTags(newValue);
@@ -93,10 +90,10 @@ export default function PropertyList() {
       <Box sx={{ mt: 1, mb: 3 }}>
         <Typography sx={{ typography: { sm: 'h5', md: 'h5' } }}>Auckland Property Listings</Typography>
       </Box>
-      <Box sx={{ mb: 2 }}>
+      <Box sx={{ mb: 1 }}>
         <Refine />
       </Box>
-      <Box sx={{ mb: 2 }}>
+      <Box sx={{ mb: 4 }}>
         <Search searchTags={searchTags} searchTagsInput={searchTagsInput} searchAllInputs={searchAllInputs} />
       </Box>
       <Box sx={{ mb: 1, display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 2 }}>

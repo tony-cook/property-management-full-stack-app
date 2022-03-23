@@ -20,7 +20,7 @@ export default function Search({ searchTags, searchTagsInput, searchAllInputs })
           backgroundColor: 'background.main',
           flexGrow: 1,
           '& .MuiButtonBase-root': {
-            backgroundColor: 'red.main',
+            backgroundColor: 'green.main',
             color: 'white',
             mr: 0.5
           },
@@ -43,7 +43,7 @@ export default function Search({ searchTags, searchTagsInput, searchAllInputs })
       />
       <Button
         variant="contained"
-        color="red"
+        color="green"
         sx={{
           textTransform: 'none'
         }}

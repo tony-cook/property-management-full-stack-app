@@ -36,7 +36,8 @@ h6 {
 }
 .listing-results-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
+  column-gap: 20px;
   flex-wrap: wrap;
   height: 55vh;
   overflow-y: scroll;
