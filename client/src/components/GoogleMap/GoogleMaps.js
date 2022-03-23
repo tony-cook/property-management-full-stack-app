@@ -5,8 +5,8 @@ import mapStyles from './components/mapStyles';
 import pinIcon from '../../assets/images/pin_icon.png';
 
 const mapContainerStyle = {
-  height: '100%',
-  width: '100%'
+  height: '70vh',
+  width: '50vw',
 };
 
 const center = {
@@ -35,7 +35,7 @@ function GoogleMaps({searchResult}) {
     <GoogleMap mapContainerStyle={mapContainerStyle} zoom={11} center={center} options={options}>
       {searchResult.map((property, index) => (
         <Marker
-          key={index}
+          key={property._id}
           position={property.coordinates}
           icon={{
             url: pinIcon,

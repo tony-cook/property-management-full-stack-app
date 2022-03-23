@@ -4,11 +4,9 @@ import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
-import Tags from '../data/tags'
+import Tags from '../data/tags';
 
-export default function Search({searchTags, searchTagsInput, searchAllInputs}) {
-
-
+export default function Search({ searchTags, searchTagsInput, searchAllInputs }) {
   return (
     <Box
       sx={{
@@ -17,41 +15,40 @@ export default function Search({searchTags, searchTagsInput, searchAllInputs}) {
         gap: 1
       }}
     >
-      <Autocomplete 
-        sx={{ 
-          backgroundColor: 'background.main', 
-          flexGrow: 1, 
-          '& .MuiButtonBase-root': { 
-            backgroundColor: 'red.main', 
-            color: 'white', mr: 0.5 
-          }, 
-          '& .MuiSvgIcon-root': { 
-            color: 'background.main' 
-          }, 
+      <Autocomplete
+        sx={{
+          backgroundColor: 'background.main',
+          flexGrow: 1,
+          '& .MuiButtonBase-root': {
+            backgroundColor: 'green.main',
+            color: 'white',
+            mr: 0.5
+          },
+          '& .MuiSvgIcon-root': {
+            color: 'background.main'
+          },
           '& .MuiChip-deleteIcon': {
-            color: 'background.main' 
-          } 
-          }} 
-        multiple 
-        id="tags-outlined" 
-        options={Tags} 
-        getOptionLabel={option => option} 
-        defaultValue={[]} 
-        filterSelectedOptions 
-        renderInput={params => <TextField {...params} 
-        label="Search" 
-        placeholder="Add tags: e.g. 'Available Now'" />} 
+            color: 'background.main'
+          }
+        }}
+        multiple
+        id="tags-outlined"
+        options={Tags}
+        getOptionLabel={option => option}
+        defaultValue={[]}
+        filterSelectedOptions
+        renderInput={params => <TextField borderColor="green.main" {...params} label="Search" placeholder="Add tags: e.g. 'Available Now'" />}
         value={searchTags}
         onChange={searchTagsInput}
       />
-      <Button 
-        variant="contained" 
-        color="red" 
-        sx={{ 
-          textTransform: 'none' 
+      <Button
+        variant="contained"
+        color="green"
+        sx={{
+          textTransform: 'none'
         }}
         onClick={searchAllInputs}
-        >
+      >
         Search Properties
       </Button>
     </Box>

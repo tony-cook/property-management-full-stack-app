@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-
 import BreadCrumbs from '../components/BreadCrumbs';
 import Search from '../components/Search';
 import Refine from '../components/Refine';
@@ -12,20 +10,20 @@ import SortSelect from '../components/SortSelect/SortSelect';
 import ListViewButton from '../components/ListViewButton/ListViewButton';
 import GoogleMaps from '../components/GoogleMap/GoogleMaps';
 
-
 export default function PropertyList() {
+  const [isLoading, setIsLoading] = useState(true);
   const [allProperties, setAllProperties] = useState([]);
   const [searchResult, setSearchResult] = useState([]);
-  const [sortType, setSortType] = React.useState('featured');
   const [sortedList, setSortedList] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-
+  const [isListView, setIsListView] = useState(false);
+  const [sortType, setSortType] = useState('featured');
   const [searchTags, setSearchTags] = useState([]);
   const [suburb, setSuburb] = useState('');
 
+  const viewWidth = isListView ? { flexGrow: 1 } : { width: '40%' };
 
-  function searchTagsInput (event,newValue) {
-    setSearchTags(newValue)
+  function searchTagsInput(event, newValue) {
+    setSearchTags(newValue);
   }
 
   const suburbInput = event => {
@@ -99,7 +97,7 @@ export default function PropertyList() {
                     <Box sx={{ mb: 1, display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 2 }}>
                       <Box sx={{ width: '50%' }}>
                         <Box display="flex">
-                            <ListViewButton />
+                            <ListViewButton setIsListView={setIsListView} isListView={isListView} />
                             <SortSelect sx={{ flexGrow: 1 }} searchResult={searchResult} setSortedList={setSortedList} setSortType={setSortType} sortType={sortType} />
                           </Box>
                           <ListingResults searchResult={searchResult} sortedList={sortedList} sortType={sortType} />
@@ -112,7 +110,8 @@ export default function PropertyList() {
 
   return (
     <>
-    {isLoading ? "" : render}
+      {isLoading ? "" : render}
     </>
   )
 }
+

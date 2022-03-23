@@ -17,7 +17,8 @@ function SortSelect({ sortType, setSortedList, setSortType, searchResult }) {
       border: '1px solid #ced4da',
       fontSize: 16,
       padding: '12px 26px 10px 17px',
-      width: '100%',
+      width: '30vw',
+      height: '30px',
       marginTop: '-8px',
       transition: theme.transitions.create(['border-color', 'box-shadow']),
       // Use the system font instead of the default Roboto font.
@@ -42,11 +43,11 @@ function SortSelect({ sortType, setSortedList, setSortType, searchResult }) {
     } else if (sortType === 'suburb') {
       setSortedList(quickSort(unSorted, 'suburb', 'asc'));
     }
-  }, [sortType,searchResult]);
+  }, [sortType, searchResult]);
 
   return (
-    <FormControl sx={{ m: 1, width: '100%' }} variant="standard">
-      <NativeSelect sx={{ width: '100%' }} id="demo-customized-select-native" value={sortType} onChange={handleChange} input={<BootstrapInput />}>
+    <FormControl sx={{ m: 1 }} variant="standard">
+      <NativeSelect id="demo-customized-select-native" value={sortType} onChange={handleChange} input={<BootstrapInput />}>
         <option value={'featured'}>Sort: Featured Listings</option>
         <option value={'minPrice'}>Lowest Price</option>
         <option value={'maxPrice'}>Highest Price</option>

@@ -17,12 +17,10 @@ const MenuProps = {
 
 const suburbs = ['All suburbs', 'Avondale', 'Blockhouse Bay', 'Browns Bay', 'City Centre (Auckland City)', 'Clover Park', 'Devonport', 'East Tamaki', 'Glen Eden', 'Glendowie', 'Glen Innes', 'Glendowie', 'Goodwood Heights', 'Greenlane', 'Henderson', 'Hillcrest', 'Howick', 'New Lynn', 'Newmarket'];
 
-export default function Suburbs({suburb, suburbInput}) {
-
-
+export default function Suburbs({ suburb, suburbInput }) {
   return (
     <FormControl sx={{ mr: 1, minWidth: 140 }}>
-      <InputLabel sx={{ borderColor:'red.main',color: 'red.main', fontSize: 13, mt: -1.2 }} id="suburblabel">
+      <InputLabel sx={{ borderColor: 'red.main', color: 'red.main', fontSize: 13, mt: -1.2 }} id="suburblabel">
         Suburb
       </InputLabel>
       <Select
@@ -45,6 +43,7 @@ export default function Suburbs({suburb, suburbInput}) {
         label="All Suburbs"
         MenuProps={MenuProps}
       >
+
         {suburbs.map((suburb, index) => {
           return (
             <MenuItem value={suburb} key={index}>

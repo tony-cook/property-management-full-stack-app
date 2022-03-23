@@ -13,8 +13,7 @@ function ListingResults({ sortType, sortedList, searchResult }) {
     } else {
       setResult(searchResult);
     }
-  }, [sortedList, searchResult]);
-
+  }, [sortedList, searchResult, sortType]);
 
   return (
     <div width="100%">

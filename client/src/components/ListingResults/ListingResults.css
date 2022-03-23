@@ -46,6 +46,11 @@ h6 {
   display: inline;
 }
 .listing-results-container {
+  display: flex;
+  justify-content: flex-start;
+  column-gap: 20px;
+  flex-wrap: wrap;
+  width: 40vw;
   height: 55vh;
   overflow-y: scroll;
   scroll-behavior: smooth;
@@ -54,14 +59,16 @@ h6 {
 }
 .single-listing-container {
   scroll-margin-top: 20px;
-  width: calc(100%-20px);
+  width: 40vw;
   height: 200px;
   margin: 20px 20px 20px 0;
   border-radius: 5px;
   display: flex;
   box-shadow: 0px 4px 19px -4px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
 }
 .single-listing-container:hover {
+  box-shadow: 0px 4px 19px -4px rgba(0, 0, 0, 0.75);
   cursor: pointer;
 }
 .listing-image {
