@@ -28,9 +28,7 @@ function ListingResults({ sortType, sortedList, searchResult }) {
             </div>
             <div className="listing-info-container">
               {property.location} <br />
-              <h2>
-                ${property.price} per week {index}<br />
-              </h2>
+              <h2>${property.price} per week<br /></h2>
               <img src={bedroomIcon} alt="" />
               <h3>{property.bedroom}</h3>
               <img src={bathroomIcon} alt="" />
