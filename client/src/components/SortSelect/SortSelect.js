@@ -42,7 +42,7 @@ function SortSelect({ sortType, setSortedList, setSortType, searchResult }) {
     } else if (sortType === 'suburb') {
       setSortedList(quickSort(unSorted, 'suburb', 'asc'));
     }
-  }, [sortType]);
+  }, [sortType, searchResult]);
 
   return (
     <FormControl sx={{ m: 1 }} variant="standard">

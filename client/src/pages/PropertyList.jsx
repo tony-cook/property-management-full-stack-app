@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+
 import BreadCrumbs from '../components/BreadCrumbs';
 import Search from '../components/Search';
 import Refine from '../components/Refine';
@@ -20,6 +21,51 @@ export default function PropertyList() {
   const [isListView, setIsListView] = useState(false);
 
   const viewWidth = isListView ? { flexGrow: 1 } : { width: '50%' };
+
+  const [searchTags, setSearchTags] = useState([]);
+  const [suburb, setSuburb] = useState('');
+
+  function searchTagsInput(event, newValue) {
+    setSearchTags(newValue);
+  }
+
+  const suburbInput = event => {
+    setSuburb(event.target.value);
+  };
+
+  function searchAllInputs() {
+    let newArray = [];
+    let secondArray = [];
+
+    const inputTags = searchTags;
+
+    if (allProperties.length !== 0) {
+      if (searchTags.length !== 0) {
+        for (let i = 0; i < allProperties.length; i++) {
+          if (inputTags.every(v => allProperties[i]['tags'].includes(v))) {
+            newArray.push(allProperties[i]);
+          }
+        }
+      }
+      if (newArray.length === 0) {
+        newArray = allProperties;
+      }
+      if (suburb !== '') {
+        for (let i = 0; i < newArray.length; i++) {
+          if (newArray[i]['suburb'] === suburb) {
+            secondArray.push(newArray[i]);
+          }
+        }
+      } else {
+        secondArray = newArray;
+      }
+      setSearchResult(secondArray);
+    }
+  }
+
+  useEffect(() => {
+    console.log(searchResult);
+  }, [searchResult]);
 
   useEffect(() => {
     try {
@@ -51,7 +97,7 @@ export default function PropertyList() {
         <Refine />
       </Box>
       <Box sx={{ mb: 2 }}>
-        <Search />
+        <Search searchTags={searchTags} searchTagsInput={searchTagsInput} searchAllInputs={searchAllInputs} />
       </Box>
       <Box sx={{ mb: 1, display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 2 }}>
         <Box sx={viewWidth}>

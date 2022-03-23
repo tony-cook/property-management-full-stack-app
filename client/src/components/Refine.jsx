@@ -7,10 +7,11 @@ import Bedrooms from './RefineItems/Bedrooms';
 import Bathrooms from './RefineItems/Bathrooms';
 import Shownearby from './RefineItems/Shownearby';
 
-export default function Refine() {
+export default function Refine({suburb, suburbInput}) {
+
   return (
     <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' } }}>
-      <Suburb />
+      <Suburb suburb={suburb} suburbInput={suburbInput}/>
       <Rent />
       <Bedrooms />
       <Bathrooms />
