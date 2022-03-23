@@ -6,7 +6,7 @@ import Button from '@mui/material/Button';
 
 import Tags from '../data/tags'
 
-export default function Search({searchTags, searchTagsInput, searchAllProperties}) {
+export default function Search({searchTags, searchTagsInput, searchAllInputs}) {
 
 
   return (
@@ -50,7 +50,7 @@ export default function Search({searchTags, searchTagsInput, searchAllProperties
         sx={{ 
           textTransform: 'none' 
         }}
-        onClick={searchAllProperties}
+        onClick={searchAllInputs}
         >
         Search Properties
       </Button>

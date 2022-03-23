@@ -14,45 +14,63 @@ import GoogleMaps from '../components/GoogleMap/GoogleMaps';
 
 export default function PropertyList() {
   const [allProperties, setAllProperties] = useState([]);
-  const [searchResult, setSearchResult] = useState(allProperties);
+  const [searchResult, setSearchResult] = useState([]);
   // const [sortedList, setSortedList] = useState(allProperties);
 
   const [isLoading, setIsLoading] = useState(true)
-  const [searchTags, setSearchTags] = useState([]);
-  
-  
 
+  const [searchTags, setSearchTags] = useState([]);
+  const [suburb, setSuburb] = useState('');
 
   function searchTagsInput (event,newValue) {
     setSearchTags(newValue)
   }
 
-  function searchAllProperties () {
+  const suburbInput = event => {
+    setSuburb(event.target.value);
+  };
 
-    const length = allProperties.length
-    const newArray = []
+  function searchAllInputs () {
+    let newArray = []
+    let secondArray = []
+
     const inputTags = searchTags
     
-    if(length === 0) {
-      return searchResult
-    } else {
-      for(let i = 0; i < length; i++) {
-        if (inputTags.every(v => allProperties[i]["tags"].includes(v))) {
-            newArray.push(allProperties[i])
+    if(allProperties.length !== 0) {
+      if(searchTags.length !== 0) {
+        for(let i = 0; i < allProperties.length; i++) {
+          if (inputTags.every(v => allProperties[i]["tags"].includes(v))) {
+              newArray.push(allProperties[i])
+          }
+        } 
+      } 
+      if (newArray.length === 0) {
+        newArray = allProperties
+      }
+      if(suburb !== '') {
+        for(let i = 0; i < newArray.length; i++) {
+          if(newArray[i]["suburb"] === suburb) {
+            secondArray.push(newArray[i])
+          }
         }
+      } else {
+        secondArray = newArray
       }
     }
-    setSearchResult(newArray)
+
+    setSearchResult(secondArray)
   }
 
-  // useEffect(() => {
-  // }, [])
+  useEffect(() => {
+    console.log(searchResult)
+  }, [searchResult])
 
   useEffect(() => {
     try {
       axios.get('http://localhost:3001/api/properties/all')
       .then(res => {
         setAllProperties(res.data.data)
+        setSearchResult(res.data.data)
         setIsLoading(false)
       })
       .catch(err => {
@@ -72,10 +90,10 @@ export default function PropertyList() {
                       <Typography sx={{ typography: { sm: 'h5', md: 'h5' } }}>Auckland Property Listings</Typography>
                     </Box>
                     <Box sx={{ mb: 2 }}>
-                      <Refine />
+                      <Refine suburb={suburb} suburbInput={suburbInput}/>
                     </Box>
                     <Box sx={{ mb: 2 }}>
-                      <Search searchTags={searchTags} searchTagsInput={searchTagsInput} searchAllProperties={searchAllProperties}/>
+                      <Search searchTags={searchTags} searchTagsInput={searchTagsInput} searchAllInputs={searchAllInputs}/>
                     </Box>
                     <Box sx={{ mb: 1, display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 2 }}>
                       <Box sx={{ width: '50%' }}>
