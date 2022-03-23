@@ -43,10 +43,10 @@ export default function PropertyList() {
             newArray.push(allProperties[i]);
           }
         }
-      }
-      if (newArray.length === 0) {
+      } else {
         newArray = allProperties;
       }
+
       if (suburb !== '') {
         for (let i = 0; i < newArray.length; i++) {
           if (newArray[i]['suburb'] === suburb) {
