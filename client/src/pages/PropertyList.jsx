@@ -23,6 +23,7 @@ export default function PropertyList() {
   const [searchTags, setSearchTags] = useState([]);
   const [suburb, setSuburb] = useState('');
 
+
   function searchTagsInput (event,newValue) {
     setSearchTags(newValue)
   }
@@ -60,9 +61,9 @@ export default function PropertyList() {
     }
   }
 
-  useEffect(() => {
-    console.log(searchResult)
-  }, [searchResult])
+  // useEffect(() => {
+
+  // }, [])
 
   useEffect(() => {
     try {
@@ -104,7 +105,7 @@ export default function PropertyList() {
                           <ListingResults searchResult={searchResult} sortedList={sortedList} sortType={sortType} />
                         </Box>
                         <Box sx={{ flexGrow: 1 }}>
-                          <GoogleMaps />
+                          <GoogleMaps searchResult={searchResult}/>
                         </Box>
                       </Box>
                     </Box>

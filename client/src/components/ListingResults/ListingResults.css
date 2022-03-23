@@ -1,5 +1,16 @@
 :root {
-  font-family: 'Noto Sans', 'Roboto', 'Arial', 'sans-serif';
+  font-family: "Noto Sans", "Roboto", "Arial", "sans-serif";
+}
+:target {
+  animation: highlight 5000ms ease-out;
+}
+@keyframes highlight {
+  0% {
+    box-shadow: 0px 0px 7px 7px rgba(41, 167, 84, 0.25);
+  }
+  100% {
+    box-shadow: 0px 4px 19px -4px rgba(0, 0, 0, 0.15);
+  }
 }
 h5 {
   font-size: 20px;
@@ -38,9 +49,11 @@ h6 {
   height: 55vh;
   overflow-y: scroll;
   scroll-behavior: smooth;
+  padding-left: 10px;
   /* margin-right: 60px; */
 }
 .single-listing-container {
+  scroll-margin-top: 20px;
   width: calc(100%-20px);
   height: 200px;
   margin: 20px 20px 20px 0;
