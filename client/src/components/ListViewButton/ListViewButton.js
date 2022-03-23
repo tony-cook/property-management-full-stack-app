@@ -4,7 +4,6 @@ import Button from '@mui/material/Button';
 import ListAltIcon from '@mui/icons-material/ListAlt';
 import MapIcon from '@mui/icons-material/Map';
 
-import ListViewIcon from '../../assets/images/list-view-icon.png';
 
 function ListViewButton({ isListView, setIsListView }) {
   const ListViewButton = styled(Button)({
@@ -16,6 +15,8 @@ function ListViewButton({ isListView, setIsListView }) {
     border: '1px solid',
     lineHeight: 1.5,
     backgroundColor: '#ffffff',
+    width:  "130px",
+    height: '54px',
     whiteSpace: 'nowrap',
     borderColor: '#bf163d',
     fontFamily: ['-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"'].join(','),

@@ -17,7 +17,8 @@ function SortSelect({ sortType, setSortedList, setSortType, searchResult }) {
       border: '1px solid #ced4da',
       fontSize: 16,
       padding: '12px 26px 10px 17px',
-      width: '380px',
+      width: '30vw',
+      height: '30px',
       marginTop: '-8px',
       transition: theme.transitions.create(['border-color', 'box-shadow']),
       // Use the system font instead of the default Roboto font.

@@ -22,16 +22,14 @@ function ListingResults({ sortType, sortedList, searchResult }) {
         <h5>Showing {result.length} results</h5>
       </div>
       <div className="listing-results-container">
-        {result.map((property, _id) => (
-          <div key={_id} className="single-listing-container" onClick={e => console.log('Clicked')}>
+        {result.map((property, index) => (
+          <div key={index} id={index} className="single-listing-container" onClick={e => console.log('Clicked')}>
             <div className="listing-image-container">
               <img className="listing-image" src={property.images[0]} alt="" />
             </div>
             <div className="listing-info-container">
               {property.location} <br />
-              <h2>
-                ${property.price} per week <br />
-              </h2>
+              <h2>${property.price} per week<br /></h2>
               <img src={bedroomIcon} alt="" />
               <h3>{property.bedroom}</h3>
               <img src={bathroomIcon} alt="" />
