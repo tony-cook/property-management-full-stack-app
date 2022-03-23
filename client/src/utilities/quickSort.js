@@ -36,4 +36,4 @@ const quickSort = (array, key, dir) => {
   }
 };
 
-module.exports = quickSort;
+export default quickSort;

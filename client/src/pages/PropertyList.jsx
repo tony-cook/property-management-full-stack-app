@@ -17,6 +17,9 @@ export default function PropertyList() {
   const [sortType, setSortType] = React.useState('featured');
   const [sortedList, setSortedList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isListView, setIsListView] = useState(false);
+
+  const viewWidth = isListView ? { flexGrow: 1 } : { width: '50%' };
 
   useEffect(() => {
     try {
@@ -51,16 +54,18 @@ export default function PropertyList() {
         <Search />
       </Box>
       <Box sx={{ mb: 1, display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 2 }}>
-        <Box sx={{ width: '50%' }}>
+        <Box sx={viewWidth}>
           <Box display="flex">
-            <ListViewButton />
+            <ListViewButton setIsListView={setIsListView} isListView={isListView} />
             <SortSelect sx={{ flexGrow: 1 }} searchResult={searchResult} setSortedList={setSortedList} setSortType={setSortType} sortType={sortType} />
           </Box>
           <ListingResults searchResult={searchResult} sortedList={sortedList} sortType={sortType} />
         </Box>
-        <Box sx={{ flexGrow: 1 }}>
-          <GoogleMaps />
-        </Box>
+        {!isListView && (
+          <Box sx={{ width: '50%' }}>
+            <GoogleMaps />
+          </Box>
+        )}
       </Box>
     </Box>
   );

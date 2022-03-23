@@ -1,12 +1,12 @@
-import React from 'react'
+import React from 'react';
 import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
+import ListAltIcon from '@mui/icons-material/ListAlt';
+import MapIcon from '@mui/icons-material/Map';
 
-import ListViewIcon from '../../assets/images/list-view-icon.png'
+import ListViewIcon from '../../assets/images/list-view-icon.png';
 
-
-
-function ListViewButton() {
+function ListViewButton({ isListView, setIsListView }) {
   const ListViewButton = styled(Button)({
     boxShadow: 'none',
     textTransform: 'none',
@@ -18,38 +18,39 @@ function ListViewButton() {
     backgroundColor: '#ffffff',
     whiteSpace: 'nowrap',
     borderColor: '#bf163d',
-    fontFamily: [
-      '-apple-system',
-      'BlinkMacSystemFont',
-      '"Segoe UI"',
-      'Roboto',
-      '"Helvetica Neue"',
-      'Arial',
-      'sans-serif',
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"',
-    ].join(','),
+    fontFamily: ['-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"'].join(','),
     '&:hover': {
       backgroundColor: '#ffffff',
       borderColor: '#bf163d',
-      boxShadow: 'none',
+      boxShadow: 'none'
     },
     '&:active': {
       boxShadow: 'none',
       backgroundColor: '#ffffff',
-      borderColor: '#bf163d',
+      borderColor: '#bf163d'
     }
   });
 
+  const handleClick = e => {
+    setIsListView(!isListView);
+    console.log(isListView);
+  };
+
   return (
     <div>
-      <ListViewButton variant="contained" disableRipple>
-        <img src={ListViewIcon} alt="icon.png" />
-         List View
+      <ListViewButton variant="contained" disableRipple onClick={handleClick}>
+        {isListView ? (
+          <>
+            <ListAltIcon /> List View
+          </>
+        ) : (
+          <>
+            <MapIcon /> Map View
+          </>
+        )}
       </ListViewButton>
     </div>
-  )
+  );
 }
 
-export default ListViewButton
+export default ListViewButton;

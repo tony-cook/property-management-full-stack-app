@@ -9,6 +9,7 @@ function App() {
   return (
     <Box>
       <Header />
+      <Box height="70px"></Box>
       <Routes>
         <Route path="/propertylist" element={<PropertyList />} />
       </Routes>
