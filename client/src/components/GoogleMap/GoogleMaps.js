@@ -1,12 +1,12 @@
-import React,{useState} from 'react';
+import React from 'react';
 import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
 
 import mapStyles from './components/mapStyles';
 import pinIcon from '../../assets/images/pin_icon.png';
 
 const mapContainerStyle = {
-  height: '70vh',
-  width: '50vw',
+  height: '100%',
+  width: '100%',
 };
 
 const center = {

@@ -4,7 +4,6 @@ import Button from '@mui/material/Button';
 import ListAltIcon from '@mui/icons-material/ListAlt';
 import MapIcon from '@mui/icons-material/Map';
 
-import ListViewIcon from '../../assets/images/list-view-icon.png';
 
 function ListViewButton({ isListView, setIsListView }) {
   const ListViewButton = styled(Button)({
