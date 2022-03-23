@@ -16,7 +16,7 @@ export default function Refine({suburb, suburbInput}) {
       <Bedrooms />
       <Bathrooms />
       <Shownearby />
-      <Button sx={{ textTransform: 'none', fontSize: 13, ml: 1 }}>clear all</Button>
+      <Button sx={{ textTransform: 'none', fontSize: 13, ml: 1 }} >clear all</Button>
     </Box>
   );
 }

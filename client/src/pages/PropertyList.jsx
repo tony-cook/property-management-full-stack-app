@@ -34,30 +34,29 @@ export default function PropertyList() {
   function searchAllInputs () {
     let newArray = []
     let secondArray = []
-
-    const inputTags = searchTags
     
     if(allProperties.length !== 0) {
       if(searchTags.length !== 0) {
         for(let i = 0; i < allProperties.length; i++) {
-          if (inputTags.every(v => allProperties[i]["tags"].includes(v))) {
+          if (searchTags.every(v => allProperties[i]["tags"].includes(v))) {
               newArray.push(allProperties[i])
           }
+          setSearchResult(newArray)
         } 
-      } 
-      if (newArray.length === 0) {
+      } else {
         newArray = allProperties
-      }
-      if(suburb !== '') {
+      } 
+
+      if(suburb !== '' && suburb !== 'All suburbs') {
         for(let i = 0; i < newArray.length; i++) {
           if(newArray[i]["suburb"] === suburb) {
             secondArray.push(newArray[i])
           }
         }
+        setSearchResult(secondArray)
       } else {
-        secondArray = newArray
+        setSearchResult(newArray)
       }
-      setSearchResult(secondArray)
     }
   }
 
