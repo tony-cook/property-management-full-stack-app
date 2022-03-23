@@ -61,6 +61,9 @@ h6 {
   display: flex;
   box-shadow: 0px 4px 19px -4px rgba(0, 0, 0, 0.15);
 }
+.single-listing-container:hover {
+  cursor: pointer;
+}
 .listing-image {
   height: 200px;
   width: 200px;
