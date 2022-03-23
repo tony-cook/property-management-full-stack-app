@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import RefineButton from './RefineButton';
 import Popover from '@mui/material/Popover';
 import Box from '@mui/material/Box';
@@ -13,13 +13,34 @@ export default function Bathrooms() {
   const highest = 10;
   const bathrooms = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const [minBathroom, setMinBathroom] = React.useState(1);
-  const [maxBathroom, setMaxBathroom] = React.useState(highest);
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [minBathroom, setMinBathroom] = useState(1);
+  const [maxBathroom, setMaxBathroom] = useState(highest);
+  const [btnContent, setBtnContent] = useState('Bathrooms: Any');
+
+  useEffect(() => {
+    if (minBathroom <= 1 && maxBathroom === 10) {
+      setBtnContent('Bathrooms: Any');
+    } else if (minBathroom < maxBathroom) {
+      setBtnContent(`Bathrooms: ${minBathroom}-${maxBathroom}`);
+    } else if (minBathroom === maxBathroom) {
+      if (minBathroom !== 1) {
+        setBtnContent(`Bathrooms: ${minBathroom}`);
+      } else {
+        setBtnContent(`Bathroom: ${minBathroom}`);
+      }
+    } else {
+      alert('min need to be less than max');
+    }
+  }, [minBathroom, maxBathroom]);
 
   const handleClick = event => {
     setAnchorEl(event.currentTarget);
   };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   const handleChangeMinRoom = event => {
     setMinBathroom(event.target.value);
   };
@@ -27,15 +48,18 @@ export default function Bathrooms() {
   const handleChangeMaxRoom = event => {
     setMaxBathroom(event.target.value);
   };
-  const handleClose = () => {
-    setAnchorEl(null);
+
+  const handleClear = event => {
+    setMinBathroom(1);
+    setMaxBathroom(highest);
   };
 
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
+
   return (
     <div>
-      <RefineButton item="Bathrooms:Any" id={id} handleClick={handleClick} />
+      <RefineButton item={btnContent} id={id} handleClick={handleClick} />
       <Popover
         id={id}
         open={open}
@@ -67,7 +91,7 @@ export default function Bathrooms() {
             <Box sx={{ mx: 1 }}>
               <FormControl sx={{ width: 100 }}>
                 <InputLabel id="demo-simple-select-label">Min</InputLabel>
-                <Select labelId="demo-simple-select-label" id="demo-simple-select" value={minBathroom} label="Min" onChange={handleChangeMinRoom}>
+                <Select labelId="demo-simple-select-label" id="demo-simple-select" value={minBathroom} label="Min" onChange={e => handleChangeMinRoom(e)}>
                   <MenuItem value="">
                     <em>Any</em>
                   </MenuItem>
@@ -84,7 +108,7 @@ export default function Bathrooms() {
             <Box sx={{ mx: 1 }}>
               <FormControl sx={{ width: 100 }}>
                 <InputLabel id="demo-simple-select-label">Max</InputLabel>
-                <Select labelId="demo-simple-select-label" id="demo-simple-select" value={maxBathroom} label="Max" onChange={handleChangeMaxRoom}>
+                <Select labelId="demo-simple-select-label" id="demo-simple-select" value={maxBathroom} label="Max" onChange={e => handleChangeMaxRoom(e)}>
                   <MenuItem value="">
                     <em>Any</em>
                   </MenuItem>
@@ -100,7 +124,9 @@ export default function Bathrooms() {
             </Box>
           </Box>
           <Box>
-            <Button sx={{ textTransform: 'none', fontSize: 13, ml: 1 }}>clear all</Button>
+            <Button sx={{ textTransform: 'none', fontSize: 13, ml: 1 }} onClick={() => handleClear()}>
+              clear all
+            </Button>
           </Box>
         </Box>
       </Popover>

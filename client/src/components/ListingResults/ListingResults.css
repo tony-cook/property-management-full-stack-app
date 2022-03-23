@@ -83,6 +83,7 @@ h6 {
   position: absolute;
   bottom: 0;
   right: 30px;
+  text-decoration: none;
 }
 .more-detail-btn:hover {
   text-decoration: underline;

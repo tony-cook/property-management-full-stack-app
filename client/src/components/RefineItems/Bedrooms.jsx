@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import RefineButton from './RefineButton';
 import Popover from '@mui/material/Popover';
 import Box from '@mui/material/Box';
@@ -13,12 +13,32 @@ export default function Bedrooms() {
   const highest = 10;
   const bedrooms = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const [minBedroom, setMinBedroom] = React.useState(1);
-  const [maxBedroom, setMaxBedroom] = React.useState(highest);
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [minBedroom, setMinBedroom] = useState(1);
+  const [maxBedroom, setMaxBedroom] = useState(highest);
+  const [btnContent, setBtnContent] = useState('Bedrooms: Any');
+
+  useEffect(() => {
+    if (minBedroom <= 1 && maxBedroom === 10) {
+      setBtnContent('Bedrooms: Any');
+    } else if (minBedroom < maxBedroom) {
+      setBtnContent(`Bedrooms: ${minBedroom}-${maxBedroom}`);
+    } else if (minBedroom === maxBedroom) {
+      if (minBedroom !== 1) {
+        setBtnContent(`Bedrooms: ${minBedroom}`);
+      } else {
+        setBtnContent(`Bedroom: ${minBedroom}`);
+      }
+    } else {
+      alert('min need to be less than max');
+    }
+  }, [minBedroom, maxBedroom]);
 
   const handleClick = event => {
     setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
   };
 
   const handleChangeMinRoom = event => {
@@ -29,15 +49,17 @@ export default function Bedrooms() {
     setMaxBedroom(event.target.value);
   };
 
-  const handleClose = () => {
-    setAnchorEl(null);
+  const handleClear = event => {
+    setMinBedroom(1);
+    setMaxBedroom(highest);
   };
 
   const open = Boolean(anchorEl);
   const id = open ? 'bedroom-popover' : undefined;
+
   return (
     <div>
-      <RefineButton item="Bedrooms: Any" id={id} handleClick={handleClick} />
+      <RefineButton item={btnContent} id={id} handleClick={handleClick} />
       <Popover
         id={id}
         open={open}
@@ -69,8 +91,8 @@ export default function Bedrooms() {
             <Box sx={{ mx: 1 }}>
               <FormControl sx={{ width: 100 }}>
                 <InputLabel id="demo-simple-select-label">Min</InputLabel>
-                <Select labelId="demo-simple-select-label" id="demo-simple-select" value={minBedroom} label="Min" onChange={handleChangeMinRoom}>
-                  <MenuItem value="">
+                <Select labelId="demo-simple-select-label" id="demo-simple-select" value={minBedroom} label="Min" onChange={e => handleChangeMinRoom(e)}>
+                  <MenuItem value={0}>
                     <em>Any</em>
                   </MenuItem>
                   {bedrooms.map((bedroom, i) => {
@@ -86,8 +108,8 @@ export default function Bedrooms() {
             <Box sx={{ mx: 1 }}>
               <FormControl sx={{ width: 100 }}>
                 <InputLabel id="demo-simple-select-label">Max</InputLabel>
-                <Select labelId="demo-simple-select-label" id="demo-simple-select" value={maxBedroom} label="Max" onChange={handleChangeMaxRoom}>
-                  <MenuItem value="">
+                <Select labelId="demo-simple-select-label" id="demo-simple-select" value={maxBedroom} label="Max" onChange={e => handleChangeMaxRoom(e)}>
+                  <MenuItem value={10}>
                     <em>Any</em>
                   </MenuItem>
                   {bedrooms.map((bedroom, i) => {
@@ -102,7 +124,9 @@ export default function Bedrooms() {
             </Box>
           </Box>
           <Box>
-            <Button sx={{ textTransform: 'none', fontSize: 13, ml: 1 }}>clear all</Button>
+            <Button sx={{ textTransform: 'none', fontSize: 13, ml: 1 }} onClick={() => handleClear()}>
+              clear all
+            </Button>
           </Box>
         </Box>
       </Popover>

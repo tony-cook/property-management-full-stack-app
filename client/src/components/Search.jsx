@@ -25,10 +25,10 @@ export default function Search({ searchTags, searchTagsInput, searchAllInputs })
             mr: 0.5
           },
           '& .MuiSvgIcon-root': {
-            color: 'background.main'
+            color: 'white'
           },
           '& .MuiChip-deleteIcon': {
-            color: 'background.main'
+            color: 'white'
           }
         }}
         multiple

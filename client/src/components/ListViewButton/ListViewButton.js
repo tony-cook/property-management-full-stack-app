@@ -41,11 +41,11 @@ function ListViewButton({ isListView, setIsListView }) {
       <ListViewButton variant="contained" disableRipple onClick={handleClick}>
         {isListView ? (
           <>
-            <ListAltIcon /> List View
+            <MapIcon /> Map View
           </>
         ) : (
           <>
-            <MapIcon /> Map View
+            <ListAltIcon /> List View
           </>
         )}
       </ListViewButton>

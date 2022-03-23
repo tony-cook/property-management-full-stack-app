@@ -19,7 +19,7 @@ export default function BasicBreadcrumbs() {
         <Link underline="hover" color="blue.light" href="/getting-started/installation/">
           Property Search
         </Link>
-        <Typography color="red.main" variant="body2">
+        <Typography color="black" variant="body2">
           Property List
         </Typography>
       </Breadcrumbs>

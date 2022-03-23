@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './ListingResults.css';
 
 import bathroomIcon from '../../assets/images/bathroom_icon.png';
@@ -37,9 +38,9 @@ function ListingResults({ sortType, sortedList, searchResult }) {
               <h3>{property.bathroom}</h3> <br />
               <div className="bottom-info">
                 <h6>Available: {property.available}</h6>
-                <div className="more-detail-btn" onClick={e => console.log('Clicked')}>
+                <Link className="more-detail-btn" to="/property/detail">
                   More details
-                </div>
+                </Link>
               </div>
             </div>
           </div>
