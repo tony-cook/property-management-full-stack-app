@@ -20,7 +20,7 @@ export default function PropertyList() {
   const [searchTags, setSearchTags] = useState([]);
   const [suburb, setSuburb] = useState('');
 
-  const viewWidth = isListView ? { flexGrow: 1 } : { width: '50%' };
+  const viewWidth = isListView ? { flexGrow: 1 } : { width: '40%' };
 
   function searchTagsInput(event, newValue) {
     setSearchTags(newValue);
@@ -91,7 +91,7 @@ export default function PropertyList() {
         <Typography sx={{ typography: { sm: 'h5', md: 'h5' } }}>Auckland Property Listings</Typography>
       </Box>
       <Box sx={{ mb: 1 }}>
-        <Refine />
+        <Refine suburb={suburb} suburbInput={suburbInput} />
       </Box>
       <Box sx={{ mb: 4 }}>
         <Search searchTags={searchTags} searchTagsInput={searchTagsInput} searchAllInputs={searchAllInputs} />
@@ -105,8 +105,8 @@ export default function PropertyList() {
           <ListingResults searchResult={searchResult} sortedList={sortedList} sortType={sortType} />
         </Box>
         {!isListView && (
-          <Box sx={{ width: '50%' }}>
-            <GoogleMaps />
+          <Box sx={{ flexGrow: 1 }}>
+            <GoogleMaps searchResult={searchResult} />
           </Box>
         )}
       </Box>

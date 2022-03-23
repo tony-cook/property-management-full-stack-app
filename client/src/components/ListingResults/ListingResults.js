@@ -21,8 +21,8 @@ function ListingResults({ sortType, sortedList, searchResult }) {
         <h5>Showing {result.length} results</h5>
       </div>
       <div className="listing-results-container">
-        {result.map((property, index) => (
-          <div key={index} className="single-listing-container" onClick={e => console.log('Clicked')}>
+        {result.map((property, _id) => (
+          <div key={_id} className="single-listing-container" onClick={e => console.log('Clicked')}>
             <div className="listing-image-container">
               <img className="listing-image" src={property.images[0]} alt="" />
             </div>

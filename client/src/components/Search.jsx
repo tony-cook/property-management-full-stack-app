@@ -37,7 +37,7 @@ export default function Search({ searchTags, searchTagsInput, searchAllInputs })
         getOptionLabel={option => option}
         defaultValue={[]}
         filterSelectedOptions
-        renderInput={params => <TextField {...params} label="Search" placeholder="Add tags: e.g. 'Available Now'" />}
+        renderInput={params => <TextField borderColor="green.main" {...params} label="Search" placeholder="Add tags: e.g. 'Available Now'" />}
         value={searchTags}
         onChange={searchTagsInput}
       />

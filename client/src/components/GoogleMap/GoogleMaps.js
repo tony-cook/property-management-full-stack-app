@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
-
-import propertyData from '../../data/properties_coords';
 import mapStyles from './components/mapStyles';
 import pinIcon from '../../assets/images/pin_icon.png';
 
@@ -22,7 +20,11 @@ const options = {
   zoomControl: true
 };
 
-function GoogleMaps() {
+const handler = id => {
+  console.log(id);
+};
+
+function GoogleMaps({ searchResult }) {
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY
   });
@@ -30,18 +32,20 @@ function GoogleMaps() {
   if (loadError) return 'Error';
   if (!isLoaded) return 'Loading...';
 
-
   return (
     <GoogleMap mapContainerStyle={mapContainerStyle} zoom={12} center={center} options={options}>
-      {propertyData.map((property, index) => (
+      {searchResult.map(property => (
         <Marker
-          key={index}
+          key={property._id}
           position={property.coordinates}
           icon={{
             url: pinIcon,
             scaledSize: new window.google.maps.Size(20, 30),
             origin: new window.google.maps.Point(0, 0),
             anchor: new window.google.maps.Point(15, 15)
+          }}
+          onClick={() => {
+            handler(property._id);
           }}
         />
       ))}
