@@ -5,6 +5,7 @@ import bathroomIcon from '../../assets/images/bathroom_icon.png';
 import bedroomIcon from '../../assets/images/bedroom_icon.png';
 
 function ListingResults({ sortType, sortedList, searchResult }) {
+  
   const [result, setResult] = useState([]);
 
   useEffect(() => {

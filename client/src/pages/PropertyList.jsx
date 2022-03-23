@@ -14,14 +14,16 @@ import GoogleMaps from '../components/GoogleMap/GoogleMaps';
 
 
 export default function PropertyList() {
+  const [isLoading, setIsLoading] = useState(true);
+  
   const [allProperties, setAllProperties] = useState([]);
   const [searchResult, setSearchResult] = useState([]);
-  const [sortType, setSortType] = React.useState('featured');
   const [sortedList, setSortedList] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-
+  const [sortType, setSortType] = useState('featured');
   const [searchTags, setSearchTags] = useState([]);
   const [suburb, setSuburb] = useState('');
+
+
 
   function searchTagsInput (event,newValue) {
     setSearchTags(newValue)
