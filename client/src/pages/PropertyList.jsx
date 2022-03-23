@@ -56,9 +56,10 @@ export default function PropertyList() {
       } else {
         secondArray = newArray
       }
+      setSearchResult(secondArray)
     }
 
-    setSearchResult(secondArray)
+
   }
 
   useEffect(() => {
