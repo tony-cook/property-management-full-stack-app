@@ -1,5 +1,6 @@
-import React, { useState, useEffect} from 'react';
-import axios from 'axios'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
@@ -15,9 +16,9 @@ import GoogleMaps from '../components/GoogleMap/GoogleMaps';
 export default function PropertyList() {
   const [allProperties, setAllProperties] = useState([]);
   const [searchResult, setSearchResult] = useState([]);
-  // const [sortedList, setSortedList] = useState(allProperties);
-
-  const [isLoading, setIsLoading] = useState(true)
+  const [sortType, setSortType] = React.useState('featured');
+  const [sortedList, setSortedList] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const [searchTags, setSearchTags] = useState([]);
   const [suburb, setSuburb] = useState('');
@@ -66,22 +67,23 @@ export default function PropertyList() {
 
   useEffect(() => {
     try {
-      axios.get('http://localhost:3001/api/properties/all')
-      .then(res => {
-        setAllProperties(res.data.data)
-        setSearchResult(res.data.data)
-        setIsLoading(false)
-      })
-      .catch(err => {
-        if (err.response.status === 404) {
-          throw new Error(`${err.config.url} not found`);
-        }
-        throw err;
-      });
+      axios
+        .get('http://localhost:3001/api/properties/all')
+        .then(res => {
+          setAllProperties(res.data.data);
+          setSearchResult(res.data.data);
+          setIsLoading(false);
+        })
+        .catch(err => {
+          if (err.response.status === 404) {
+            throw new Error(`${err.config.url} not found`);
+          }
+          throw err;
+        });
     } catch (err) {
-      console.log(err)
+      console.log(err);
     }
-  },[])
+  }, []);
 
   const render =  <Box sx={{ py: 2, px: { xs: 4, lg: '5vw' } }}>
                     <BreadCrumbs />
@@ -97,20 +99,20 @@ export default function PropertyList() {
                     <Box sx={{ mb: 1, display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 2 }}>
                       <Box sx={{ width: '50%' }}>
                         <Box display="flex">
-                          <ListViewButton />
-                          <SortSelect sx={{ flexGrow: 1 }} />
+                            <ListViewButton />
+                            <SortSelect sx={{ flexGrow: 1 }} searchResult={searchResult} setSortedList={setSortedList} setSortType={setSortType} sortType={sortType} />
+                          </Box>
+                          <ListingResults searchResult={searchResult} sortedList={sortedList} sortType={sortType} />
                         </Box>
-                        <ListingResults />
-                      </Box>
-                      <Box bgcolor="red.main" sx={{ flexGrow: 1 }}>
-                        {/* <GoogleMaps /> */}
+                        <Box sx={{ flexGrow: 1 }}>
+                          <GoogleMaps />
+                        </Box>
                       </Box>
                     </Box>
-                  </Box>
 
   return (
     <>
     {isLoading ? "" : render}
     </>
-  );
+  )
 }

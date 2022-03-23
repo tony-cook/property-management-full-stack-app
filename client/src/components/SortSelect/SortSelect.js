@@ -3,8 +3,9 @@ import { styled } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import FormControl from '@mui/material/FormControl';
 import NativeSelect from '@mui/material/NativeSelect';
+import quickSort from '../../utilities/quickSort';
 
-function SortSelect() {
+function SortSelect({ sortType, setSortedList, setSortType, searchResult }) {
   const BootstrapInput = styled(InputBase)(({ theme }) => ({
     'label + &': {
       marginTop: theme.spacing(3)
@@ -28,11 +29,20 @@ function SortSelect() {
     }
   }));
 
-  const [sortType, setSortType] = React.useState('');
-
   const handleChange = event => {
     setSortType(event.target.value);
   };
+
+  React.useEffect(() => {
+    let unSorted = searchResult;
+    if (sortType === 'minPrice') {
+      setSortedList(quickSort(unSorted, 'price', 'asc'));
+    } else if (sortType === 'maxPrice') {
+      setSortedList(quickSort(unSorted, 'price', 'des'));
+    } else if (sortType === 'suburb') {
+      setSortedList(quickSort(unSorted, 'suburb', 'asc'));
+    }
+  }, [sortType]);
 
   return (
     <FormControl sx={{ m: 1, width: '100%' }} variant="standard">
@@ -40,7 +50,7 @@ function SortSelect() {
         <option value={'featured'}>Sort: Featured Listings</option>
         <option value={'minPrice'}>Lowest Price</option>
         <option value={'maxPrice'}>Highest Price</option>
-        <option value={'available'}>Available Date</option>
+        <option value={'suburb'}>Suburb</option>
       </NativeSelect>
     </FormControl>
   );

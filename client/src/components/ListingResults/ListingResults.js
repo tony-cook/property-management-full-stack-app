@@ -1,25 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import './ListingResults.css';
 
-import propertyDataWeek2 from '../../data/properties_week_2.json';
 import bathroomIcon from '../../assets/images/bathroom_icon.png';
 import bedroomIcon from '../../assets/images/bedroom_icon.png';
 
-function ListingResults() {
-  const [resultsCount, setResultsCount] = useState(0);
+function ListingResults({ sortType, sortedList, searchResult }) {
+  const [result, setResult] = useState([]);
 
   useEffect(() => {
-    const resultsCount = propertyDataWeek2.length;
-    setResultsCount(resultsCount);
-  }, []);
+    if (sortType !== 'featured') {
+      setResult(sortedList);
+    } else {
+      setResult(searchResult);
+    }
+  }, [sortedList]);
 
   return (
     <div width="100%">
       <div className="showing-results-text">
-        <h5>Showing {resultsCount} results</h5>
+        <h5>Showing {result.length} results</h5>
       </div>
       <div className="listing-results-container">
-        {propertyDataWeek2.map((property, index) => (
+        {result.map((property, index) => (
           <div key={index} className="single-listing-container" onClick={e => console.log('Clicked')}>
             <div className="listing-image-container">
               <img className="listing-image" src={property.images[0]} alt="" />
