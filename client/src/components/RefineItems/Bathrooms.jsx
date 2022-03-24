@@ -19,7 +19,7 @@ export default function Bathrooms({ setSearchBathroom, clearAll }) {
   const [btnContent, setBtnContent] = useState('Bathrooms: Any');
 
   useEffect(() => {
-    if (minBathroom <= 1 && maxBathroom === 10) {
+    if (minBathroom === 1 && maxBathroom === 10) {
       setBtnContent('Bathrooms: Any');
       setSearchBathroom([]);
     } else if (minBathroom < maxBathroom) {
@@ -99,7 +99,7 @@ export default function Bathrooms({ setSearchBathroom, clearAll }) {
               <FormControl sx={{ width: 100 }}>
                 <InputLabel id="demo-simple-select-label">Min</InputLabel>
                 <Select labelId="demo-simple-select-label" id="demo-simple-select" value={minBathroom} label="Min" onChange={e => handleChangeMinRoom(e)}>
-                  <MenuItem value="">
+                  <MenuItem value={1}>
                     <em>Any</em>
                   </MenuItem>
                   {bathrooms.map((bathroom, i) => {
@@ -116,7 +116,7 @@ export default function Bathrooms({ setSearchBathroom, clearAll }) {
               <FormControl sx={{ width: 100 }}>
                 <InputLabel id="demo-simple-select-label">Max</InputLabel>
                 <Select labelId="demo-simple-select-label" id="demo-simple-select" value={maxBathroom} label="Max" onChange={e => handleChangeMaxRoom(e)}>
-                  <MenuItem value="">
+                  <MenuItem value={10}>
                     <em>Any</em>
                   </MenuItem>
                   {bathrooms.map((bathroom, i) => {

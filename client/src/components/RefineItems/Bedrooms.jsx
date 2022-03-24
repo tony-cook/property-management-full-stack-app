@@ -19,7 +19,7 @@ export default function Bedrooms({ setSearchBedroom, clearAll }) {
   const [btnContent, setBtnContent] = useState('Bedrooms: Any');
 
   useEffect(() => {
-    if (minBedroom <= 1 && maxBedroom === 10) {
+    if (minBedroom === 1 && maxBedroom === 10) {
       setBtnContent('Bedrooms: Any');
       setSearchBedroom([]);
     } else if (minBedroom < maxBedroom) {
@@ -99,7 +99,7 @@ export default function Bedrooms({ setSearchBedroom, clearAll }) {
               <FormControl sx={{ width: 100 }}>
                 <InputLabel id="demo-simple-select-label">Min</InputLabel>
                 <Select labelId="demo-simple-select-label" id="demo-simple-select" value={minBedroom} label="Min" onChange={e => handleChangeMinRoom(e)}>
-                  <MenuItem value={0}>
+                  <MenuItem value={1}>
                     <em>Any</em>
                   </MenuItem>
                   {bedrooms.map((bedroom, i) => {
