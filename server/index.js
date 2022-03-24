@@ -4,7 +4,6 @@ const cors = require('cors')
 const dotenv = require('dotenv').config()
 const app = express()
 
-
 // const Property = require('./models/property-model')
 const db = require('./db')
 const propertyRouter = require('./routes/property-router')
