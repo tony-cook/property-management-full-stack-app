@@ -12,7 +12,7 @@ function App() {
       <Header />
       <Box height="70px"></Box>
       <Routes>
-        <Route path="/propertylist" element={<PropertyList />} />
+        <Route path="/" element={<PropertyList />} />
         <Route path="/property/detail" element={<PropertyDetail />} />
       </Routes>
     </Box>
