@@ -153,7 +153,7 @@ export default function PropertyList() {
   useEffect(() => {
     try {
       axios
-        .get('http://localhost:3001/api/properties/all')
+        .get('http://localhost/server/api/properties/all')
         .then(res => {
           setAllProperties(res.data.data);
           setSearchResult(res.data.data);

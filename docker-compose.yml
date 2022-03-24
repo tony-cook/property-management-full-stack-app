@@ -1,0 +1,31 @@
+version: "3.3"
+services:
+  mission6b-nginx:
+    image: mission6b-nginx
+    container_name: mission6b-nginx
+    build:
+      dockerfile: Dockerfile
+      context: ./nginx
+    ports:
+      - "80:80"
+    links:
+      - mission6b-client
+      - mission6b-backend
+    depends_on:
+      - mission6b-client
+      - mission6b-backend
+    restart: always
+  mission6b-client: 
+    build:
+      dockerfile: Dockerfile
+      context: ./client
+    container_name: mission6b-client
+    image: mission6b-client
+  mission6b-backend:
+    build:
+      dockerfile: Dockerfile
+      context: ./server
+    container_name: mission6b-backend
+    image: mission6b-backend
+
+    
