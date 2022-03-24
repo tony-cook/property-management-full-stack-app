@@ -9,9 +9,9 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Button from '@mui/material/Button';
 
-export default function Rent() {
-  const highest = 1000;
-  const rents = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000];
+export default function Rent({ setSearchRent, clearAll }) {
+  const highest = 1500;
+  const rents = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500];
 
   const [anchorEl, setAnchorEl] = useState(null);
   const [minRent, setMinRent] = useState(0);
@@ -19,16 +19,23 @@ export default function Rent() {
   const [btnContent, setBtnContent] = useState('Rent per Week: Any');
 
   useEffect(() => {
-    if (minRent === 0 && maxRent === 1000) {
+    if (minRent === 0 && maxRent === highest) {
       setBtnContent('Rent per Week: Any');
+      setSearchRent([]);
     } else if (minRent < maxRent) {
       setBtnContent(`Rent: $${minRent}-$${maxRent} per week`);
-    } else if (minRent == maxRent) {
+      setSearchRent([minRent, maxRent]);
+    } else if (minRent === maxRent) {
       setBtnContent(`Rent: $${minRent} per week`);
+      setSearchRent([minRent]);
     } else {
       alert('minRent need to be less than maxRent');
     }
   }, [minRent, maxRent]);
+
+  useEffect(() => {
+    handleClear();
+  }, [clearAll]);
 
   const handleClick = event => {
     setAnchorEl(event.currentTarget);

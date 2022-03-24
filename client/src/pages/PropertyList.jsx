@@ -18,9 +18,12 @@ export default function PropertyList() {
   const [isListView, setIsListView] = useState(false);
   const [sortType, setSortType] = useState('featured');
   const [searchTags, setSearchTags] = useState([]);
+  const [searchRent, setSearchRent] = useState([]);
+  const [searchBedroom, setSearchBedroom] = useState([]);
+  const [searchBathroom, setSearchBathroom] = useState([]);
   const [suburb, setSuburb] = useState('');
 
-  const viewWidth = isListView ? { flexGrow: 1 } : { width: '40%' };
+  const viewWidth = isListView ? { flexGrow: 1 } : { width: '50%' };
 
   function searchTagsInput(event, newValue) {
     setSearchTags(newValue);
@@ -31,31 +34,119 @@ export default function PropertyList() {
   };
 
   function searchAllInputs() {
+    // - Tags newArray
+    // - Refine -> 1. suburb (secondArray) 2. rent (rentArray) 3. bedroom 4. bathroom
+    let result = [];
     let newArray = [];
     let secondArray = [];
+    let rentArray = [];
+    let bedroomArray = [];
+    let bathroomArray = [];
 
     if (allProperties.length !== 0) {
+      //search tags
       if (searchTags.length !== 0) {
         for (let i = 0; i < allProperties.length; i++) {
           if (searchTags.every(v => allProperties[i]['tags'].includes(v))) {
             newArray.push(allProperties[i]);
           }
-          setSearchResult(newArray);
         }
       } else {
         newArray = allProperties;
       }
+      result = newArray;
 
-      if (suburb !== '') {
-        for (let i = 0; i < newArray.length; i++) {
-          if (newArray[i]['suburb'] === suburb) {
-            secondArray.push(newArray[i]);
-          }
-        }
-        setSearchResult(secondArray);
+      //search suburb
+      if (result.length === 0) {
+        setSearchResult(result);
+        return;
       } else {
-        setSearchResult(newArray);
+        if (suburb !== '') {
+          for (let i = 0; i < result.length; i++) {
+            if (result[i]['suburb'] === suburb) {
+              secondArray.push(result[i]);
+            }
+          }
+        } else {
+          secondArray = result;
+        }
       }
+
+      result = secondArray;
+
+      //search rent
+      if (result.length === 0) {
+        setSearchResult(result);
+        return;
+      } else {
+        if (searchRent.length !== 0) {
+          if (searchRent.length === 1) {
+            for (let i = 0; i < result.length; i++) {
+              if (result[i]['price'] === searchRent[0]) {
+                rentArray.push(result[i]);
+              }
+            }
+          } else if (searchRent.length === 2) {
+            for (let i = 0; i < result.length; i++) {
+              if (result[i]['price'] >= searchRent[0] && result[i]['price'] <= searchRent[1]) rentArray.push(result[i]);
+            }
+          }
+        } else {
+          rentArray = result;
+        }
+      }
+
+      result = rentArray;
+
+      //search bedroom
+      if (result.length === 0) {
+        setSearchResult(result);
+        return;
+      } else {
+        if (searchBedroom.length !== 0) {
+          if (searchBedroom.length === 1) {
+            for (let i = 0; i < result.length; i++) {
+              if (result[i]['bedroom'] === searchBedroom[0]) {
+                bedroomArray.push(result[i]);
+              }
+            }
+          } else if (searchBedroom.length === 2) {
+            for (let i = 0; i < result.length; i++) {
+              if (result[i]['bedroom'] >= searchBedroom[0] && result[i]['bedroom'] <= searchBedroom[1]) bedroomArray.push(result[i]);
+            }
+          }
+        } else {
+          bedroomArray = result;
+        }
+      }
+
+      result = bedroomArray;
+
+      // search bathroom
+      if (result.length === 0) {
+        setSearchResult(result);
+        return;
+      } else {
+        if (searchBathroom.length !== 0) {
+          if (searchBathroom.length === 1) {
+            for (let i = 0; i < result.length; i++) {
+              if (result[i]['bathroom'] === searchBathroom[0]) {
+                bathroomArray.push(result[i]);
+              }
+            }
+          } else if (searchBathroom.length === 2) {
+            for (let i = 0; i < result.length; i++) {
+              if (result[i]['bathroom'] >= searchBathroom[0] && result[i]['bathroom'] <= searchBathroom[1]) bathroomArray.push(result[i]);
+            }
+          }
+        } else {
+          bathroomArray = result;
+        }
+      }
+      result = bathroomArray;
+
+      setSearchResult(result);
+      return;
     }
   }
 
@@ -86,7 +177,7 @@ export default function PropertyList() {
         <Typography sx={{ typography: { sm: 'h5', md: 'h5' } }}>Auckland Property Listings</Typography>
       </Box>
       <Box sx={{ mb: 2 }}>
-        <Refine suburb={suburb} suburbInput={suburbInput} />
+        <Refine suburb={suburb} suburbInput={suburbInput} setSearchRent={setSearchRent} setSearchBedroom={setSearchBedroom} setSearchBathroom={setSearchBathroom} setSuburb={setSuburb} />
       </Box>
       <Box sx={{ mb: 2 }}>
         <Search searchTags={searchTags} searchTagsInput={searchTagsInput} searchAllInputs={searchAllInputs} />

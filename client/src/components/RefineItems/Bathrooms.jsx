@@ -9,7 +9,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Button from '@mui/material/Button';
 
-export default function Bathrooms() {
+export default function Bathrooms({ setSearchBathroom, clearAll }) {
   const highest = 10;
   const bathrooms = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -21,18 +21,25 @@ export default function Bathrooms() {
   useEffect(() => {
     if (minBathroom <= 1 && maxBathroom === 10) {
       setBtnContent('Bathrooms: Any');
+      setSearchBathroom([]);
     } else if (minBathroom < maxBathroom) {
       setBtnContent(`Bathrooms: ${minBathroom}-${maxBathroom}`);
+      setSearchBathroom([minBathroom, maxBathroom]);
     } else if (minBathroom === maxBathroom) {
       if (minBathroom !== 1) {
         setBtnContent(`Bathrooms: ${minBathroom}`);
       } else {
         setBtnContent(`Bathroom: ${minBathroom}`);
       }
+      setSearchBathroom([minBathroom]);
     } else {
       alert('min need to be less than max');
     }
   }, [minBathroom, maxBathroom]);
+
+  useEffect(() => {
+    handleClear();
+  }, [clearAll]);
 
   const handleClick = event => {
     setAnchorEl(event.currentTarget);
