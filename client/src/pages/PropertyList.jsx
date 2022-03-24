@@ -34,7 +34,7 @@ export default function PropertyList() {
   };
 
   function searchAllInputs() {
-    // - Tags newArray
+    // - Tags newArray //
     // - Refine -> 1. suburb (secondArray) 2. rent (rentArray) 3. bedroom 4. bathroom
     let result = [];
     let newArray = [];
