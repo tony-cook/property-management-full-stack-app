@@ -1,11 +1,10 @@
 import React from 'react';
 import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
 
-
 import mapStyles from './components/mapStyles';
 import pinIcon from '../../assets/images/pin_icon.png';
 
-require('dotenv').config()
+let value = process.env.REACT_APP_GOOGLE_MAPS_API_KEY
 
 const mapContainerStyle = {
   height: '100%',
@@ -27,7 +26,7 @@ const options = {
 function GoogleMaps({searchResult}) {
 
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY
+    googleMapsApiKey: value
   });
   
 
