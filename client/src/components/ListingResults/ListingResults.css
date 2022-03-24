@@ -61,6 +61,7 @@ h6 {
 }
 .single-listing-container {
   scroll-margin-top: 20px;
+  background:white;
   width: 520px;
   height: 200px;
   margin: 10px;
