@@ -1,8 +1,5 @@
 version: 0.2
-env:
-  secrets-manager:
-    DOCKER_PW: "$DOCKER_PW"
-    DOCKER_ID: "$DOCKER_ID"
+
 phases:
   build:
     commands:
