@@ -1,4 +1,9 @@
-FROM node:latest as build 
+FROM node:latest as build
+ENV NODE_ENV production
+
+ARG REACT_APP_GOOGLE_MAPS_API_KEY
+ENV REACT_APP_GOOGLE_MAPS_API_KEY $REACT_APP_GOOGLE_MAPS_API_KEY
+
 WORKDIR /app
 COPY package*.json ./
 RUN npm install 
