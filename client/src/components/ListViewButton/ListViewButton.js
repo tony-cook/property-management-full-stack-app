@@ -4,7 +4,6 @@ import Button from '@mui/material/Button';
 import ListAltIcon from '@mui/icons-material/ListAlt';
 import MapIcon from '@mui/icons-material/Map';
 
-
 function ListViewButton({ isListView, setIsListView }) {
   const ListViewButton = styled(Button)({
     boxShadow: 'none',
@@ -15,7 +14,7 @@ function ListViewButton({ isListView, setIsListView }) {
     border: '1px solid',
     lineHeight: 1.5,
     backgroundColor: '#ffffff',
-    width:  "130px",
+    width: '130px',
     height: '54px',
     whiteSpace: 'nowrap',
     borderColor: '#bf163d',
@@ -34,7 +33,6 @@ function ListViewButton({ isListView, setIsListView }) {
 
   const handleClick = e => {
     setIsListView(!isListView);
-    console.log(isListView);
   };
 
   return (

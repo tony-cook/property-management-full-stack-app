@@ -15,7 +15,7 @@ const MenuProps = {
   }
 };
 
-const suburbs = ['All suburbs', 'Avondale', 'Blockhouse Bay', 'Browns Bay', 'City Centre (Auckland City)', 'Clover Park', 'Devonport', 'East Tamaki', 'Glen Eden', 'Glendowie', 'Glen Innes', 'Glendowie', 'Goodwood Heights', 'Greenlane', 'Henderson', 'Hillcrest', 'Howick', 'New Lynn', 'Newmarket'];
+const suburbs = ['Avondale', 'Blockhouse Bay', 'Browns Bay', 'City Centre (Auckland City)', 'Clover Park', 'Devonport', 'East Tamaki', 'Glen Eden', 'Glendowie', 'Glen Innes', 'Glendowie', 'Goodwood Heights', 'Greenlane', 'Henderson', 'Hillcrest', 'Howick', 'New Lynn', 'Newmarket'];
 
 export default function Suburbs({ suburb, suburbInput }) {
   return (
@@ -43,7 +43,9 @@ export default function Suburbs({ suburb, suburbInput }) {
         label="All Suburbs"
         MenuProps={MenuProps}
       >
-
+        <MenuItem value="">
+          <em>All</em>
+        </MenuItem>
         {suburbs.map((suburb, index) => {
           return (
             <MenuItem value={suburb} key={index}>

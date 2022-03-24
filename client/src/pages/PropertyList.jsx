@@ -30,38 +30,34 @@ export default function PropertyList() {
     setSuburb(event.target.value);
   };
 
-  function searchAllInputs () {
-    let newArray = []
-    let secondArray = []
-    
-    if(allProperties.length !== 0) {
-      if(searchTags.length !== 0) {
-        for(let i = 0; i < allProperties.length; i++) {
-          if (searchTags.every(v => allProperties[i]["tags"].includes(v))) {
-              newArray.push(allProperties[i])
-          }
-          setSearchResult(newArray)
-        } 
-      } else {
-        newArray = allProperties
-      } 
+  function searchAllInputs() {
+    let newArray = [];
+    let secondArray = [];
 
-      if(suburb !== '' && suburb !== 'All suburbs') {
-        for(let i = 0; i < newArray.length; i++) {
-          if(newArray[i]["suburb"] === suburb) {
-            secondArray.push(newArray[i])
+    if (allProperties.length !== 0) {
+      if (searchTags.length !== 0) {
+        for (let i = 0; i < allProperties.length; i++) {
+          if (searchTags.every(v => allProperties[i]['tags'].includes(v))) {
+            newArray.push(allProperties[i]);
+          }
+          setSearchResult(newArray);
+        }
+      } else {
+        newArray = allProperties;
+      }
+
+      if (suburb !== '') {
+        for (let i = 0; i < newArray.length; i++) {
+          if (newArray[i]['suburb'] === suburb) {
+            secondArray.push(newArray[i]);
           }
         }
-        setSearchResult(secondArray)
+        setSearchResult(secondArray);
       } else {
-        setSearchResult(newArray)
+        setSearchResult(newArray);
       }
     }
   }
-
-  // useEffect(() => {
-
-  // }, [])
 
   useEffect(() => {
     try {
@@ -83,35 +79,33 @@ export default function PropertyList() {
     }
   }, []);
 
-  const render =  <Box sx={{ py: 2, px: { xs: 4, lg: '5vw' } }}>
-                    <BreadCrumbs />
-                    <Box sx={{ mt: 1, mb: 3 }}>
-                      <Typography sx={{ typography: { sm: 'h5', md: 'h5' } }}>Auckland Property Listings</Typography>
-                    </Box>
-                    <Box sx={{ mb: 2 }}>
-                      <Refine suburb={suburb} suburbInput={suburbInput}/>
-                    </Box>
-                    <Box sx={{ mb: 2 }}>
-                      <Search searchTags={searchTags} searchTagsInput={searchTagsInput} searchAllInputs={searchAllInputs}/>
-                    </Box>
-                    <Box sx={{ mb: 1, display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 2 }}>
-                      <Box sx={{ width: '50%' }}>
-                        <Box display="flex">
-                            <ListViewButton setIsListView={setIsListView} isListView={isListView} />
-                            <SortSelect sx={{ flexGrow: 1 }} searchResult={searchResult} setSortedList={setSortedList} setSortType={setSortType} sortType={sortType} />
-                          </Box>
-                          <ListingResults searchResult={searchResult} sortedList={sortedList} sortType={sortType} />
-                        </Box>
-                        <Box sx={{ flexGrow: 1 }}>
-                          <GoogleMaps searchResult={searchResult}/>
-                        </Box>
-                      </Box>
-                    </Box>
-
-  return (
-    <>
-      {isLoading ? "" : render}
-    </>
-  )
+  const render = (
+    <Box sx={{ py: 2, px: { xs: 4, lg: '5vw' } }}>
+      <BreadCrumbs />
+      <Box sx={{ mt: 1, mb: 3 }}>
+        <Typography sx={{ typography: { sm: 'h5', md: 'h5' } }}>Auckland Property Listings</Typography>
+      </Box>
+      <Box sx={{ mb: 2 }}>
+        <Refine suburb={suburb} suburbInput={suburbInput} />
+      </Box>
+      <Box sx={{ mb: 2 }}>
+        <Search searchTags={searchTags} searchTagsInput={searchTagsInput} searchAllInputs={searchAllInputs} />
+      </Box>
+      <Box sx={{ mb: 1, display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 2 }}>
+        <Box sx={viewWidth}>
+          <Box display="flex">
+            <ListViewButton setIsListView={setIsListView} isListView={isListView} />
+            <SortSelect sx={{ flexGrow: 1 }} searchResult={searchResult} setSortedList={setSortedList} setSortType={setSortType} sortType={sortType} />
+          </Box>
+          <ListingResults searchResult={searchResult} sortedList={sortedList} sortType={sortType} />
+        </Box>
+        {!isListView && (
+          <Box sx={{ flexGrow: 1 }}>
+            <GoogleMaps searchResult={searchResult} />
+          </Box>
+        )}
+      </Box>
+    </Box>
+  );
+  return <>{isLoading ? '...' : render}</>;
 }
-
