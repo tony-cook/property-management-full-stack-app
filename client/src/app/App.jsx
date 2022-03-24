@@ -6,7 +6,6 @@ import PropertyList from '../pages/PropertyList';
 import PropertyDetail from '../pages/PropertyDetail';
 import Box from '@mui/material/Box';
 
-require('dotenv').config()
 
 function App() {
   return (
