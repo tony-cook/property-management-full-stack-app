@@ -21,12 +21,12 @@ const options = {
   zoomControl: true
 };
 
-function GoogleMaps({searchResult}) {
+function GoogleMaps({ searchResult }) {
 
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY
   });
-  
+
 
   if (loadError) return 'Error';
   if (!isLoaded) return 'Loading...';
@@ -44,8 +44,8 @@ function GoogleMaps({searchResult}) {
             anchor: new window.google.maps.Point(15, 15)
           }}
           onClick={(e) => {
-            window.location.href=`#${index}`
-          }} 
+            window.location.href = `#${index}`
+          }}
         />
       ))}
     </GoogleMap>
